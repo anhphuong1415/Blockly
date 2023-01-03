@@ -1,0 +1,285 @@
+#RUN {
+    position: absolute;
+    top: 2mm;
+    right: 2mm;
+    background-color: #082e8157;
+    background: url("Utils/Icon/svg/Start.svg") no-repeat top left;
+    background-size: cover;
+    border-radius: 1mm;
+    color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+    padding: 3mm 3mm;
+    display: inline-block;
+    width: 13mm;
+    height: 13mm;
+}
+
+#SAVE {
+    /* position: absolute;
+    top: 20mm;
+    right: 2mm;
+    background-color: #d1e7ee;
+    border-radius: 3mm;
+    color: white;
+    text-transform: uppercase;
+    padding: 3mm 3mm; */
+    position: absolute;
+    top: 17mm;
+    right: 2mm;
+    background-color: #f1f2f5;
+    background: url("Utils/Icon/svg/Save.svg") no-repeat top left;
+    background-size: cover;
+    border-radius: 1mm;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding: 3mm 3mm;
+    display: inline-block;
+    width: 13mm;
+    height: 13mm;
+}
+
+#BLUETOOTH {
+    /* position: absolute;
+    top: 20mm;
+    right: 2mm;
+    background-color: #d1e7ee;
+    border-radius: 3mm;
+    color: white;
+    text-transform: uppercase;
+    padding: 3mm 3mm; */
+    position: absolute;
+    top: 32mm;
+    right: 2mm;
+    background-color: #f1f2f5;
+    background: url("Utils/Icon/svg/BLE.svg") no-repeat top left;
+    background-size: cover;
+    border-radius: 1mm;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding: 3mm 3mm;
+    display: inline-block;
+    width: 13mm;
+    height: 13mm;
+}
+
+
+#LOAD {
+    position: absolute;
+    top: 32mm;
+    right: 2mm;
+    background-color: #f1f2f5;
+    background: url("Utils/Icon/svg/Load.svg") no-repeat top left;
+    background-size: cover;
+    border-radius: 1mm;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding: 3mm 3mm;
+    display: inline-block;
+    width: 13mm;
+    height: 13mm;
+}
+
+.a-button {
+    display: table;
+    padding: 7px 15px 8px 15px;
+    border: none;
+    font-family: "open_sans_lightregular";
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#SAVE_ICON {
+    width: 5mm;
+    height: 5mm;
+}
+
+#STOP_ICON {
+    width: 5mm;
+    height: 5mm;
+    visibility: hidden;
+}
+
+#RUN_ICON {
+    width: 5mm;
+    height: 5mmm;
+}
+
+
+/* #LOAD_ICON {
+    width: 10mm;
+    height: 10mmm;
+} */
+
+#bodyDiv {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("Utils/Background.png");
+    background-color: royalblue;
+    background-size: cover;
+}
+
+#blocklyDiv {
+    display: inline-block;
+    position: absolute;
+    top: 0mm;
+    left: 0;
+    height: calc(100vh - 0mm);
+    width: calc(100vw - 19mm);
+}
+
+#headerDiv_ {
+    width: 100vw;
+    height: 10mm;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("Utils/MenuBar.svg") no-repeat bottom center;
+    background-size: contain;
+    background-color: #03030370;
+    border-style: none;
+    border-color: rgba(4, 124, 194, 0.822);
+    border-width: 2px;
+    border-radius: 2%;
+}
+
+#tabName {
+    width: 20vw;
+    height: 9mm;
+    position: absolute;
+    top: 0;
+    left: 40vw;
+    background: url("Utils/ProgramTitle.svg") no-repeat top center;
+    background-size: contain;
+}
+
+#functionButton {
+    width: 18mm;
+    height: calc(100vh - 0mm);
+    position: absolute;
+    top: 0mm;
+    right: 0mm;
+    border-style: solid;
+    border-color: rgb(5, 181, 250);
+    border-width: 1px;
+    border-radius: 1mm;
+    background-color: rgba(3, 3, 3, 0.65);
+}
+
+#snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 5px;
+    /* Set a default minimum width */
+    margin-left: -200px;
+    /* Divide value of min-width by 2 */
+    background-color: 'transparent';
+    /* background-color: rgba(65, 105, 225, 0); */
+    /* Black background color */
+    color: #ecebf3;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 2px;
+    /* Rounded borders */
+    padding: 16px;
+    /* Padding */
+    position: absolute;
+    /* Sit on top of the screen */
+    z-index: 1;
+    /* Add a z-index if needed */
+    left: 70vw;
+    /* Center the snackbar */
+    bottom: 1px;
+    /* 30px from the bottom */
+}
+
+#SNACK_BAR {
+    width: 3cm;
+    height: 3cm;
+    color: 'transparent';
+}
+
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+
+#snackbar.show {
+    visibility: visible;
+    /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    /* -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s; */
+}
+
+
+/* Animations to fade the snackbar in and out */
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+
+/* #codeSpaceText {
+    position: absolute;
+    top: 0;
+    left: 50vw;
+} */
+
+.blocklyMainBackground {
+    stroke-width: 0px;
+    /* stroke: rgba(3, 3, 3, 0.438) */
+}
+
+.injectionDiv {
+    background-color: rgba(3, 3, 3, 0.438);
+    border-style: solid;
+    border-color: rgba(4, 124, 194, 0.822);
+    border-width: 1px;
+    border-radius: 1mm;
+}
