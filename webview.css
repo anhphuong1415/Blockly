@@ -1,82 +1,65 @@
+
 #RUN {
-    position: absolute;
-    top: 2mm;
-    right: 2mm;
-    background-color: #082e8157;
-    background: url("Utils/Icon/svg/Start.svg") no-repeat top left;
-    background-size: cover;
-    border-radius: 1mm;
-    color: rgba(255, 255, 255, 0);
-    text-transform: uppercase;
-    padding: 3mm 3mm;
-    display: inline-block;
-    width: 13mm;
-    height: 13mm;
+    background: url("Utils/Icon/svg/Start.svg");
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: white !important;
+    border-radius: 12px;    
+    width: 38px;
+    height: 38px;
+    box-shadow: inset 1px -2px 0px #CDC4FF;
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#RUN:hover
+{
+    background-color: #A494FF !important;
 }
 
 #SAVE {
-    /* position: absolute;
-    top: 20mm;
-    right: 2mm;
-    background-color: #d1e7ee;
-    border-radius: 3mm;
-    color: white;
-    text-transform: uppercase;
-    padding: 3mm 3mm; */
-    position: absolute;
-    top: 17mm;
-    right: 2mm;
-    background-color: #f1f2f5;
-    background: url("Utils/Icon/svg/Save.svg") no-repeat top left;
-    background-size: cover;
-    border-radius: 1mm;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    padding: 3mm 3mm;
-    display: inline-block;
-    width: 13mm;
-    height: 13mm;
+    background: url("Utils/Icon/svg/Save.svg");
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: white !important;
+    border-radius: 12px;    
+    width: 38px;
+    height: 38px;
+    box-shadow: inset 1px -2px 0px #CDC4FF;
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0
 }
 
-#BLUETOOTH {
-    /* position: absolute;
-    top: 20mm;
-    right: 2mm;
-    background-color: #d1e7ee;
-    border-radius: 3mm;
-    color: white;
-    text-transform: uppercase;
-    padding: 3mm 3mm; */
-    position: absolute;
-    top: 32mm;
-    right: 2mm;
-    background-color: #f1f2f5;
-    background: url("Utils/Icon/svg/BLE.svg") no-repeat top left;
-    background-size: cover;
-    border-radius: 1mm;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    padding: 3mm 3mm;
-    display: inline-block;
-    width: 13mm;
-    height: 13mm;
+#SAVE:hover
+{
+    background-color: #A494FF !important;
 }
-
 
 #LOAD {
-    position: absolute;
-    top: 32mm;
-    right: 2mm;
-    background-color: #f1f2f5;
-    background: url("Utils/Icon/svg/Load.svg") no-repeat top left;
-    background-size: cover;
-    border-radius: 1mm;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    padding: 3mm 3mm;
-    display: inline-block;
-    width: 13mm;
-    height: 13mm;
+    background: url("Utils/Icon/svg/Load.svg");
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: white !important;
+    border-radius: 12px;    
+    width: 38px;
+    height: 38px;
+    box-shadow: inset 1px -2px 0px #CDC4FF;
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0
+}
+
+#LOAD:hover
+{
+    background-color: #A494FF !important;
 }
 
 .a-button {
@@ -90,47 +73,30 @@
     opacity: 0.9;
 }
 
-#SAVE_ICON {
-    width: 5mm;
-    height: 5mm;
+#functionButton {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
 }
-
-#STOP_ICON {
-    width: 5mm;
-    height: 5mm;
-    visibility: hidden;
-}
-
-#RUN_ICON {
-    width: 5mm;
-    height: 5mmm;
-}
-
-
-/* #LOAD_ICON {
-    width: 10mm;
-    height: 10mmm;
-} */
 
 #bodyDiv {
-    display: flex;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("Utils/Background.png");
-    background-color: royalblue;
+    display: flex;
+    flex-direction: row;
+    top: 39px;
+    left: 0px;
+    width: 800px ;
+    height: 360.17px;
+    background-color: transparent;
     background-size: cover;
 }
 
 #blocklyDiv {
-    display: inline-block;
-    position: absolute;
-    top: 0mm;
-    left: 0;
-    height: calc(100vh - 0mm);
-    width: calc(100vw - 19mm);
+    width: 717px;
+    height: 287px;
 }
 
 #headerDiv_ {
@@ -156,19 +122,6 @@
     left: 40vw;
     background: url("Utils/ProgramTitle.svg") no-repeat top center;
     background-size: contain;
-}
-
-#functionButton {
-    width: 18mm;
-    height: calc(100vh - 0mm);
-    position: absolute;
-    top: 0mm;
-    right: 0mm;
-    border-style: solid;
-    border-color: rgb(5, 181, 250);
-    border-width: 1px;
-    border-radius: 1mm;
-    background-color: rgba(3, 3, 3, 0.65);
 }
 
 #snackbar {
@@ -264,22 +217,12 @@
     }
 }
 
-
-/* #codeSpaceText {
-    position: absolute;
-    top: 0;
-    left: 50vw;
-} */
-
 .blocklyMainBackground {
     stroke-width: 0px;
-    /* stroke: rgba(3, 3, 3, 0.438) */
 }
 
 .injectionDiv {
-    background-color: rgba(3, 3, 3, 0.438);
-    border-style: solid;
-    border-color: rgba(4, 124, 194, 0.822);
-    border-width: 1px;
-    border-radius: 1mm;
+    background-color: rgba(164, 148, 255, 0.08);
+    border: 1px solid #A494FF;
+    border-radius: 15px;
 }

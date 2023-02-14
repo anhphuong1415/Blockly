@@ -24,12 +24,8 @@ class CustomCategory extends Blockly.ToolboxCategory {
      * @override
      */
     addColourBorder_(colour) {
-        // this.rowDiv_.style.backgroundColor = colour;
-        this.rowDiv_.style.backgroundColor = '#00ffff2f';
-        // this.rowDiv_.style.background = "url(Utils/Icon/svg/Start.svg) no-repeat top left";
-        // this.rowDiv_.style.backgroundSize = "cover";
-        // this.opt_parent.style.background = "url(Utils/ToolboxFrame.svg) no-repeat top left";
-        // this.opt_parent.style.backgroundSize = "cover";
+        this.rowDiv_.style.backgroundColor = colour;
+        this._colour = colour;
     }
 
     /**
@@ -45,12 +41,11 @@ class CustomCategory extends Blockly.ToolboxCategory {
             // Change the background color of the div to white.
             this.rowDiv_.style.backgroundColor = 'white';
             // Set the colour of the text to the colour of the category.
-            labelDom.style.color = this.colour_;
-            this.iconDom_.style.color = this.colour_;
+            labelDom.style.color = '#725EBD';
+            this.iconDom_.style.color = '#725EBD';
         } else {
             // Set the background back to the original colour.
-            // this.rowDiv_.style.backgroundColor = this.colour_;
-            this.rowDiv_.style.backgroundColor = '#00ffff2f';
+            this.rowDiv_.style.backgroundColor = this._colour;
             // Set the text back to white.
             labelDom.style.color = 'white';
             this.iconDom_.style.color = 'white';
@@ -69,8 +64,10 @@ class CustomCategory extends Blockly.ToolboxCategory {
         const iconImg = document.createElement('img');
         iconImg.src = 'Utils/ToolboxIcon/' + this.name_ + '.svg ';
         iconImg.alt = this.name_ + 'Logo';
-        iconImg.width = '35';
-        iconImg.height = '35';
+        iconImg.width = '31';
+        iconImg.height = '31';
+        iconImg.style.backgroundColor = "white";
+        iconImg.style.borderRadius = '31px'
         return iconImg;
     }
 }

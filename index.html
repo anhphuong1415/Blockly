@@ -16,6 +16,7 @@
     <script src="Libs/js/blockly/msg/vi.js"></script>
     <script src="CustomBlockForRange1.js"></script>
     <script src="wait_block.js"></script>
+    <script src="theme.js"></script>
     <script>
         var goog = {
             provide: function() {},
@@ -31,7 +32,6 @@
     <script src="GenneratorForRange.js"></script>
     <script src="custom_category_es6.js"></script>
     <script src="toolbox_label_es6.js"></script>
-    <script src="theme.js"></script>
 
     <link rel="stylesheet" type="text/css" href="CustomField/css/pitch.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/turtle.css">
@@ -41,9 +41,8 @@
     <link rel="stylesheet" type="text/css" href="CustomField/css/ringled.css">
 </head>
 
-<body>
-
-    <div id="bodyDiv" style="width: 100%; height: 100vh">
+<body style="width: 800px; height: 361px; background-image: url(Utils/Background.png); background-size: cover;">
+    <div id="bodyDiv">
         <xml id="toolbox" style="display: none">
             <category name="Di chuyển" categorystyle="list_category">
                 <block type="robot_move">
@@ -176,7 +175,7 @@
                 toolboxPosition: 'start',
                 css: true,
                 rtl: false,
-                scrollbars: true,
+                // scrollbars: true,
                 sounds: true,
                 oneBasedIndex: true,
                 zoom: {

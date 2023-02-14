@@ -3,7 +3,7 @@ Blockly.Themes.Halloween = Blockly.Theme.defineTheme('halloween', {
     'base': Blockly.Themes.Classic,
     'categoryStyles': {
         'list_category': {
-            'colour': "#093a8f",
+            'colour': "#725EBD80",
             'opacity': '0.5'
         },
         'logic_category': {
@@ -39,8 +39,8 @@ Blockly.Themes.Halloween = Blockly.Theme.defineTheme('halloween', {
         }
     },
     'componentStyles': {
-        'workspaceBackgroundColour': 'transparent',
-        'toolboxBackgroundColour': '#01071657',
+        'workspaceBackgroundColour': 'rgba(164, 148, 255, 0.08)',
+        'toolboxBackgroundColour': 'transparent',
         'toolboxForegroundColour': 'transparent',
         'flyoutBackgroundColour': '#03030370',
         'flyoutForegroundColour': 'transparent',
