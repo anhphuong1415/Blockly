@@ -31,13 +31,13 @@
     align-items: flex-start;
     padding: 0px 12px 0px 0px;
     gap: 4px;
-
+    
     background: rgba(114, 94, 189, 0.5);
     border: 1px solid #A494FF;
     border-radius: 45% / 150%;
-
+    
     /* Inside auto layout */
-
+    
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -55,7 +55,6 @@
 .customIcon {
     color: rgba(238, 237, 245, 0);
 }
-
 
 /* Stacks the icon on top of the label. */
 
@@ -79,6 +78,7 @@
 .blocklyTreeRow {
     height: initial;
 }
+
 
 .blocklyToolboxDiv {
     height: 100%;
@@ -109,4 +109,26 @@
     max-height: 2cm;
     border-radius: 100%;
     background-color: white;
+}
+
+.blocklyToolboxCategory[disabled="true"] {
+    visibility: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.blocklyToolboxCategory[disabled="true"]::after {
+    z-index: 2;
+    visibility: visible;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('Utils/ToolboxIcon/LockCategory.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14%;
+    background-color: rgba(114, 94, 189, 0.5);;
+    border-radius: 45% / 150%;
 }
