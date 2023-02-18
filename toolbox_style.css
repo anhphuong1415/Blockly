@@ -123,7 +123,8 @@
     content: '';
     display: block;
     position: absolute;
-    height: 100%;
+    height: calc(100% - 3px);
+    max-height: 2cm;
     width: 100%;
     background-image: url('Utils/ToolboxIcon/LockCategory.svg');
     background-position: center;
