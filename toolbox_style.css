@@ -69,7 +69,7 @@
 
 /* Makes our label white. */
 .blocklyTreeLabel {
-    font-size: 200%;
+    font-size: 100%;
     color: white;
     justify-self: stretch;
     align-self: center;
