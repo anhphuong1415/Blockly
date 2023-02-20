@@ -5,7 +5,7 @@
     background-position: center !important;
     background-color: white !important;
     width: 90%;
-    max-width: 5cm;
+    max-width: 2cm;
     aspect-ratio: 1 / 1;
     border-radius: calc(100vw / 90); 
     background-size: 90%;  
@@ -28,7 +28,7 @@
     background-position: center !important;
     background-color: white !important;
     width: 90%;
-    max-width: 5cm;
+    max-width: 2cm;
     aspect-ratio: 1 / 1;
     border-radius: calc(100vw / 90); 
     background-size: 90%;
@@ -51,7 +51,7 @@
     background-position: center !important;
     background-color: white !important;
     width: 90%;
-    max-width: 5cm;
+    max-width: 2cm;
     aspect-ratio: 1 / 1;
     border-radius: calc(100vw / 90); 
     background-size: 90%;
@@ -92,16 +92,16 @@
 }
 
 #blocklyDiv {
-    width: 90%;
+    width: 89%;
     height: 100%;
 }
 
 #bodyDiv {
     position: absolute;
-    top: 10vh;
+    top: 1px;
     right: 0px;
-    width: 100vw;
-    height: 89vh;
+    width: calc(100vw - 2px);
+    height: calc(100vh - 2px);
     display: flex;
     flex-direction: row-reverse;
     background-color: transparent;
