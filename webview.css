@@ -80,7 +80,7 @@
 }
 
 #functionButton {
-    width: 10%;
+    width: 5%;
     height: 100%;
     border: none;
     display: flex;
@@ -92,7 +92,7 @@
 }
 
 #blocklyDiv {
-    width: 89%;
+    width: 95%;
     height: 100%;
 }
 
