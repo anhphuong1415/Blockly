@@ -249,24 +249,20 @@ CustomFields.FieldSegmentLed.prototype.createView_ = function () {
     );
     for (var i = 0; i < 4; i++) {
         var offset = i * 30;
-      for (var j = 0; j < 7; j++) {
-        if (!this.cellLed_[i][j]) {
-          this.cellLed_[i][j] = Blockly.utils.dom.createSvgElement(
-            'rect',
-            {
-              class: 'cellSvg',
-              x: j * 20 + 1,
-              y: i * 20 + 1,
-              width: 20,
-              height: 20,
-              rx: 5,
-              ry: 5,
-              fill: '#fff',
-            },
-            this.matrixGroup_,
-          );
+        for (var j = 0; j < 7; j++) {
+            if (!this.cellLed_[i][j]) {
+            this.cellLed_[i][j] = Blockly.utils.dom.createSvgElement(
+                'polygon',
+                {
+                class: 'cellSvg',
+                point: offset,
+                stoke: "#fff",
+                fill: '#fff',
+                },
+                this.matrixGroup_,
+            );
+            }
         }
-      }
     }
   };
 
