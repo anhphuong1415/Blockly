@@ -121,6 +121,27 @@ Blockly.Blocks['playwithmatrix'] = {
   },
 };
 
+Blockly.Blocks['field_ledSegments'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(
+        new Blockly.FieldImage('Utils/BlockIcon/dot_matrix.png', 30, 30, {
+          alt: '*',
+          flipRtl: 'FALSE',
+        }),
+      )
+      .appendField('Led 7 thanh')
+      .appendField(' hiển thị ')
+      .appendField(new CustomFields.FieldSegmentLed(), 'Map')
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
 Blockly.Blocks['playwithmatrixledchar'] = {
   init: function () {
     this.appendDummyInput()

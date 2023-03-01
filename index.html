@@ -19,8 +19,8 @@
     <script src="theme.js"></script>
     <script>
         var goog = {
-            provide: function() {},
-            require: function() {}
+            provide: function () { },
+            require: function () { }
         };
     </script>
     <script src="CustomField/js/field_pitch.js"></script>
@@ -29,6 +29,7 @@
     <script src="CustomField/js/field_velocity.js"></script>
     <script src="CustomField/js/field_matrix.js"></script>
     <script src="CustomField/js/field_ring.js"></script>
+    <script src="CustomField/js/field_7_segments.js"></script>
     <script src="GenneratorForRange.js"></script>
     <script src="custom_category_es6.js"></script>
     <script src="toolbox_label_es6.js"></script>
@@ -39,6 +40,7 @@
     <link rel="stylesheet" type="text/css" href="CustomField/css/velocity.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/matrixLed.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/ringled.css">
+    <link rel="stylesheet" type="text/css" href="CustomField/css/field_7ledSegment.css">
 </head>
 
 <body style="background-image: url(Utils/Background.png); background-size: cover;">
@@ -65,6 +67,8 @@
                 <block type="playmusicnote">
                     <field name="Note">C</field>
                     <field name="Duration">0</field>
+                </block>
+                <block type="field_ledSegments">
                 </block>
                 <block type="ringled">
                     <field name="ringLedModule">Port 1</field>
@@ -190,8 +194,7 @@
             });
 
             const urlParams = new URLSearchParams(window.location.search);
-            for(var i = 0; i < workspacePlayground.getToolbox().getToolboxItems().length; i++)
-            {
+            for (var i = 0; i < workspacePlayground.getToolbox().getToolboxItems().length; i++) {
                 var tmpCate = workspacePlayground.getToolbox().getToolboxItems()[i];
                 tmpCate.setDisabled(urlParams.get(i));
             }
@@ -207,7 +210,7 @@
                 importScript()
             } else {
                 Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
-                  workspacePlayground);
+                    workspacePlayground);
             }
             window.workspacePlayground = workspacePlayground;
             var myInterpreter = null;
@@ -219,7 +222,7 @@
 
             function initApi(interpreter, globalObject) {
                 // Add an API function for the prompt() block.
-                var wrapper = function(text) {
+                var wrapper = function (text) {
                     text = text ? text.toString() : '';
                     return interpreter.createPrimitive(prompt(text));
                 };
@@ -230,19 +233,19 @@
                 initInterpreterWaitForSeconds(interpreter, globalObject);
 
                 // Add an API function for highlighting blocks.
-                var wrapper = function(id) {
+                var wrapper = function (id) {
                     return workspacePlayground.highlightBlock(id);
                 };
                 interpreter.setProperty(globalObject, 'highlightBlock',
                     interpreter.createNativeFunction(wrapper));
 
-                var wrapper = function(payload) {
+                var wrapper = function (payload) {
                     return sendApp(payload);
                 }
                 interpreter.setProperty(globalObject, 'sendApp',
                     interpreter.createNativeFunction(wrapper));
 
-                var wrapper = function() {
+                var wrapper = function () {
                     return interpreter.createPrimitive(getValue());
                 }
                 interpreter.setProperty(globalObject, 'getValue',
@@ -268,7 +271,7 @@
                 return;
             }
 
-            document.addEventListener("message", function(event) {
+            document.addEventListener("message", function (event) {
                 console.log("Received post message", event);
 
             }, false);
@@ -342,8 +345,8 @@
                         // Clear the program output.
                         myInterpreter = new Interpreter(latestCode, initApi);
                     }
-                    setTimeout(function() {
-                        nextStep = function() {
+                    setTimeout(function () {
+                        nextStep = function () {
                             if (myInterpreter.step()) {
                                 if (Boolean(stopButton)) {
                                     setTimeout(nextStep, 10);
@@ -387,17 +390,17 @@
 
             function handleTmpSave() {
                 let workspace = Blockly.getMainWorkspace();
-                if (typeof(Storage) !== "undefined") {
+                if (typeof (Storage) !== "undefined") {
                     localStorage.removeItem("storageTmp");
                     var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
                     localStorage.setItem("storageTmp", Blockly.Xml.domToText(xml));
-                } else {}
+                } else { }
             }
 
             function handleTmpLOAD() {
                 let workspace = Blockly.getMainWorkspace();
                 workspace.clear();
-                if (typeof(Storage) !== "undefined") {
+                if (typeof (Storage) !== "undefined") {
                     // workspace.clear();
                     if (localStorage.storageTmp != null) {
                         // workspace.clear();
@@ -472,7 +475,7 @@
             }
 
             generateCodeAndLoadIntoInterpreter();
-            workspacePlayground.addChangeListener(function(event) {
+            workspacePlayground.addChangeListener(function (event) {
                 if (!event.isUiEvent) {
                     // Something changed. Parser needs to be reloaded.
                     resetInterpreter();

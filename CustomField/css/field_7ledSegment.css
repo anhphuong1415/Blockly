@@ -1,0 +1,115 @@
+.clear {
+	clear: both;
+}
+
+.ledSegmentsModule div.segment-x,
+.ledSegmentsModule div.segment-y {
+	position: absolute;
+}
+
+.ledSegmentsModule span.segmentBorder {
+	display: block;
+	position: absolute;
+}
+
+.segmentsDisplay {
+	width: 122px;
+	height: 220px;
+}
+
+.segmentsDisplay .segment-x {
+	width: 72px;
+	left: 13px;
+	border-bottom: 12px solid #000;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+}
+
+.segmentsDisplay .segment-x .segment-border {
+	top: 12px;
+	left: -12px;
+	right: -12px;
+	border-top: 12px solid #000;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+}
+
+.segmentsDisplay .segment-y {
+	height: 72px;
+	width: 0;
+	border-right: 12px solid #000;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+}
+
+.segmentsDisplay .segment-y .segment-border {
+	position: relative;
+	left: 12px;
+	height: 72px;
+	margin-top: -12px;
+	border-left: 12px solid #000;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+}
+
+.segmentsDisplay .segment-1 {
+	top: 0;
+}
+
+.segmentsDisplay .segment-2 {
+	top: 13px;
+	left: 98px;
+}
+
+.segmentsDisplay .segment-3 {
+	top: 111px;
+	left: 98px;
+}
+
+.segmentsDisplay .segment-4 {
+	top: 196px;
+}
+
+.segmentsDisplay .segment-5{
+	top: 111px;
+	left: 0px;
+}
+
+.segmentsDisplay .segment-6{
+	top: 13px;
+	left: 0px;
+}
+
+.segmentsDisplay .segment-7 {
+	top: 98px;
+}
+/* clock */
+
+#display-2, #display-4 {
+	margin-right: 60px;
+}
+
+#vertical-center {
+	position: absolute;
+	height: 0;
+	top: 50%;
+	left: 50%
+}
+
+#clock-container {
+	margin-top: -110px;
+	margin-left: -462px;
+	width: 924px;
+	height: 220px;
+}
+
+#clock-container .display-container:last-child {
+	margin: 0;
+}
+
+#clock-container:after {
+	display: block;
+	content: '.';
+	visibility: hidden;
+	clear: both;
+}
