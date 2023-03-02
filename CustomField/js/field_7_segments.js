@@ -100,10 +100,10 @@ CustomFields.FieldSegmentLed.prototype.showEditor_ = function() {
 }
 
 CustomFields.FieldSegmentLed.prototype.styleDiv = function () {
-    Blockly.WidgetDiv.DIV.style.width = '25em';
+    Blockly.WidgetDiv.DIV.style.width = '40em';
     Blockly.WidgetDiv.DIV.style.height = '16em';
     Blockly.WidgetDiv.DIV.style.position = 'relative';
-    Blockly.WidgetDiv.DIV.style.left = 'calc(50% - 12.5em)';
+    Blockly.WidgetDiv.DIV.style.left = 'calc(50% - 20em)';
     Blockly.WidgetDiv.DIV.style.top = 'calc(50% - 8em)';
     Blockly.WidgetDiv.DIV.style.backgroundColor = '#030303dc';
     Blockly.WidgetDiv.DIV.style.borderRadius = '2%';
@@ -112,21 +112,23 @@ CustomFields.FieldSegmentLed.prototype.styleDiv = function () {
     Blockly.WidgetDiv.DIV.style.color = '#a8d8f8';
     Blockly.WidgetDiv.DIV.style.boxShadow = '0 0 0.4em 0 #79c3f4';
     Blockly.WidgetDiv.DIV.style.textAlign = 'center';
-    // Blockly.WidgetDiv.DIV.style.alignItems = 'center';
-    // Blockly.WidgetDiv.DIV.style.justifyContent = 'center';
+    Blockly.WidgetDiv.DIV.style.display = 'block';
+    Blockly.WidgetDiv.DIV.style.alignItems = 'center';
+    Blockly.WidgetDiv.DIV.style.justifyContent = 'center';
 };
 
 CustomFields.FieldSegmentLed.prototype.createWidgetView = function () {
+    var editorDiv = document.createElement('div');
+    editorDiv.textContent = 'LED SEGMENTS';
     var ledSegmentModule = document.createElement('div');
-    ledSegmentModule.textContent = 'LED SEGMENTS';
     ledSegmentModule.id = 'ledSegmentsModule';
 
     for(let i = 1; i < 5; ++i)
     {
         var display = document.createElement('div');
-        display.className = 'segmentsDisplay';
+        display.className = 'segmentsDisplay Led';
         display.id = 'display' + i.toString();
-        for(let j = 1; j < 8; ++j)
+        for(let j = 1; j < 8; ++j)  
         {
             var segment = document.createElement('div');
             if((j - 1) % 3 == 0)
@@ -154,8 +156,8 @@ CustomFields.FieldSegmentLed.prototype.createWidgetView = function () {
 
         ledSegmentModule.appendChild(display);
     }
-
-    return ledSegmentModule;
+    editorDiv.appendChild(ledSegmentModule)
+    return editorDiv;
 };
 
 CustomFields.FieldSegmentLed.prototype.onSegmentClick = function (event) {
