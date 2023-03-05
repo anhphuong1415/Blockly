@@ -104,7 +104,7 @@ CustomFields.FieldSegmentLed.prototype.styleDiv = function () {
     Blockly.WidgetDiv.DIV.style.height = '16em';
     Blockly.WidgetDiv.DIV.style.position = 'relative';
     Blockly.WidgetDiv.DIV.style.left = 'calc(50% - 20em)';
-    Blockly.WidgetDiv.DIV.style.top = 'calc(50% - 8em)';
+    Blockly.WidgetDiv.DIV.style.top = 'calc(50% + 8em)';
     Blockly.WidgetDiv.DIV.style.backgroundColor = '#030303dc';
     Blockly.WidgetDiv.DIV.style.borderRadius = '2%';
     Blockly.WidgetDiv.DIV.style.border = 'solid';
@@ -148,11 +148,10 @@ CustomFields.FieldSegmentLed.prototype.createWidgetView = function () {
             segmentBorder.id = 'segmentBorder' + i.toString() + j.toString();
             segment.appendChild(segmentBorder);
             display.appendChild(segment);
+            this.editorListeners_.push(
+                Blockly.bindEvent_(segment, this.getMouseUp(), this, this.onSegmentClick),
+            );
         }
-
-        this.editorListeners_.push(
-            Blockly.bindEvent_(segment, this.getMouseUp(), this, this.onSegmentClick),
-        );
 
         ledSegmentModule.appendChild(display);
     }
@@ -161,15 +160,14 @@ CustomFields.FieldSegmentLed.prototype.createWidgetView = function () {
 };
 
 CustomFields.FieldSegmentLed.prototype.onSegmentClick = function (event) {
-    var curSegment = event.target;
-    
-    if(curSegment.style.backgroundColor != '#a8d8f8')
+    var curSegment = event.currentTarget ;
+    if(curSegment.style.opacity != '0.3')
     {
-        curSegment.style.backgroundColor = '#a8d8f8'
+      curSegment.style.opacity = '0.3'
     }
     else
     {
-        curSegment.style.backgroundColor = 'transparent';
+      curSegment.style.opacity = '1.0';
     }
 };
 
