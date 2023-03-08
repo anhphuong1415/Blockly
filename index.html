@@ -13,6 +13,7 @@
     <script src="Libs/js/blockly/blocks_compressed.js"></script>
     <script src="Libs/js/blockly/javascript_compressed.js"></script>
     <script src="toolbox_standard.js"></script>
+    <script src="Lesson.js"></script>
     <script src="Libs/js/blockly/msg/vi.js"></script>
     <script src="CustomBlockForRange1.js"></script>
     <script src="wait_block.js"></script>
@@ -144,6 +145,11 @@
 
         <xml id="startBlocks" style="display: none">
             <block type="dummy_play_block" x="400" y="50"></block>
+            <block type="robot_move" x="450" y="200">
+                <field name="Direction">Tiến</field>
+                <field name="Velocity">0</field>
+                <field name="Duration">0</field>
+            </block>
         </xml>
         <div id="functionButton">
             <button id="RUN" onclick="handleGenCode()"></button>
@@ -196,6 +202,9 @@
                 tmpCate.setDisabled(urlParams.get(i));
             }
 
+            var lesson = urlParams.get('lesson');
+            var sub_lesson = urlParams.get('subLesson');
+
 
             function importScript() {
                 var xml = Blockly.Xml.textToDom(window.currentFile.content);
@@ -206,8 +215,9 @@
             if (window.currentFile) {
                 importScript()
             } else {
-                Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
-                  workspacePlayground);
+                // Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspacePlayground);
+                Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom('<xml style="display: none">' + Lesson[lesson - 1][sub_lesson - 1] + '</xml>')
+                                            , workspacePlayground);
             }
             window.workspacePlayground = workspacePlayground;
             var myInterpreter = null;
@@ -332,8 +342,6 @@
 
             function handleGenCode() {
                 stopButton = !Boolean(stopButton);
-                console.log(stopButton.toString());
-                console.log(latestCode);
                 if (Boolean(stopButton)) {
                     document.getElementById("RUN").style.background = "url(Utils/Icon/svg/Stop.svg)";
                     resetStepUi();
@@ -409,6 +417,7 @@
 
             function handleSave() {
                 const data = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()));
+                console.log(data);
                 let fileName = prompt("File Name", "Untitled");
                 if (fileName == null || fileName == "") {
                 } else {
