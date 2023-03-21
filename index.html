@@ -145,11 +145,6 @@
 
         <xml id="startBlocks" style="display: none">
             <block type="dummy_play_block" x="400" y="50"></block>
-            <block type="robot_move" x="450" y="200">
-                <field name="Direction">Tiến</field>
-                <field name="Velocity">0</field>
-                <field name="Duration">0</field>
-            </block>
         </xml>
         <div id="functionButton">
             <button id="RUN" onclick="handleGenCode()"></button>
@@ -215,9 +210,15 @@
             if (window.currentFile) {
                 importScript()
             } else {
-                // Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspacePlayground);
-                Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom('<xml style="display: none">' + Lesson[lesson - 1][sub_lesson - 1] + '</xml>')
+                if(!lesson || !sub_lesson)
+                {
+                    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspacePlayground);
+                }
+                else
+                {
+                    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom('<xml style="display: none">' + Lesson[lesson - 1][sub_lesson - 1] + '</xml>')
                                             , workspacePlayground);
+                }
             }
             window.workspacePlayground = workspacePlayground;
             var myInterpreter = null;
