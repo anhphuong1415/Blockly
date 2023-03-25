@@ -994,5 +994,431 @@ Lesson =
                 '</block>' +
             '</next>' +        
         '</block>'
+    ],
+
+    //Lesson 9
+    [
+        //9.1
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                '<block type="logic_compare"><field name="OP">LT</field>' +
+                                    '<value name="A"><block type="light_sensor"><field name="port">Port 1</field></block></value>' +
+                                    '<value name="B"><block type="math_number"><field name="NUM">170</field></block></value>' +
+                                '</block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="break_continue_loop">' +
+                                    '<field name="action">thoát vòng lặp</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                    '<next>' +
+                        '<block type="playmusicnote" x="380" y="300">' +
+                            '<field name="Note">C</field><field name="Duration">1</field>' +
+                        '</block>' +
+                    '</next>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //9.2
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                '<block type="logic_compare"><field name="OP">LT</field>' +
+                                    '<value name="A"><block type="light_sensor"><field name="port">Port 1</field></block></value>' +
+                                    '<value name="B"><block type="math_number"><field name="NUM">1</field></block></value>' +
+                                '</block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="break_continue_loop">' +
+                                    '<field name="action">thoát vòng lặp</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                    '<next>' +
+                        '<block type="rgb_led">' +
+                            '<field name="color_left">#00cccc</field>' +
+                            '<field name="color_right">#00cccc</field>' +
+                            '<field name="duration">10</field>' +
+                        '</block>'  +
+                    '</next>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //9.3
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                '<block type="logic_compare"><field name="OP">LT</field>' +
+                                    '<value name="A"><block type="light_sensor"><field name="port">Port 1</field></block></value>' +
+                                    '<value name="B"><block type="math_number"><field name="NUM">170</field></block></value>' +
+                                '</block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="break_continue_loop">' +
+                                    '<field name="action">thoát vòng lặp</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                    '<next>' +
+                        '<block type="rgb_led">' +
+                            '<field name="color_left">#00cccc</field>' +
+                            '<field name="color_right">#00cccc</field>' +
+                            '<field name="duration">3</field>' +
+                        '</block>'  +
+                    '</next>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //9.4
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if_block">' +
+                            '<value name="condition">' +
+                                '<block type="logic_compare"><field name="OP">LT</field>' +
+                                    '<value name="A"><block type="math_number"><field name="NUM">1</field></block></value>' +
+                                    '<value name="B"><block type="math_number"><field name="NUM">1</field></block></value>' +
+                                '</block>' +
+                            '</value>' +
+                            '<statement name="if block">' +
+                                '<block type="rgb_led">' +
+                                    '<field name="color_left">#000000</field>' +
+                                    '<field name="color_right">#000000</field>' +
+                                    '<field name="duration">1</field>' +
+                                '</block>' +
+                            '</statement>' +
+                            '<statement name="else block">' +   
+                                '<block type="rgb_led">' +
+                                    '<field name="color_left">#00cccc</field>' +
+                                    '<field name="color_right">#00cccc</field>' +
+                                    '<field name="duration">1</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                            '<next>' +
+                                '<block type="wait_seconds">' +
+                                    '<field name="SECONDS">1</field>' +
+                                '</block>' +
+                            '</next>' +
+                        '</block>' +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //9.5
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                '<block type="logic_compare"><field name="OP">GT</field>' +
+                                    '<value name="A"><block type="light_sensor"><field name="port">Port 1</field></block></value>' +
+                                    '<value name="B"><block type="math_number"><field name="NUM">800</field></block></value>' +
+                                '</block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="break_continue_loop">' +
+                                    '<field name="action">thoát vòng lặp</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                    '<next>' +
+                        '<block type="robot_move">' +
+                            '<field name="Direction">Tiến</field>' +
+                            '<field name="Velocity">50</field>' +
+                            '<field name="Duration">1</field>' +
+                        '</block>'  +
+                    '</next>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //9.6
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                '<block type="logic_compare"><field name="OP">GT</field>' +
+                                    '<value name="A"><block type="light_sensor"><field name="port">Port 1</field></block></value>' +
+                                    '<value name="B"><block type="math_number"><field name="NUM">800</field></block></value>' +
+                                '</block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="break_continue_loop">' +
+                                    '<field name="action">thoát vòng lặp</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+    ],
+
+    //Lesson 10
+    [
+        //10.1
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="robot_move">' +
+                    '<field name="Direction">Tiến</field>' +
+                    '<field name="Velocity">50</field>' +
+                    '<field name="Duration">1</field>' +
+                '</block>'  +
+            '</next>' +
+        '</block>' +
+        '<block type="math_number" x="250" y="200"><field name="NUM">175</field></block>',
+
+        //10.2 Refactor block robot move for complete
+        '<block type="dummy_play_block" x="250" y="50">' +
+        '</block>' +
+        '<block type="math_number" x="250" y="200"><field name="NUM">175</field></block>',
+
+        //10.3
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="robot_move">' +
+                            '<field name="Direction">Tiến</field>' +
+                            '<field name="Velocity">50</field>' +
+                            '<field name="Duration">1</field>' +
+                            '<next>' +
+                                '<block type="wait_seconds">' +
+                                    '<field name="SECONDS">1</field>' +
+                                '</block>'  +
+                            '</next>' +
+                        '</block>'  +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>' +
+        '<block type="srf05" x="300" y="250"><field name="port">Port 1</field></block>',
+
+        //10.4
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="robot_move">' +
+                            '<field name="Direction">Tiến</field>' +
+                            '<field name="Velocity">50</field>' +
+                            '<field name="Duration">1</field>' +
+                            '<next>' +
+                                '<block type="wait_seconds">' +
+                                    '<field name="SECONDS">1</field>' +
+                                '</block>'  +
+                            '</next>' +
+                        '</block>'  +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>' +
+        '<block type="math_arithmetic" x="300" y="250">' +
+            '<field name="OP">MULTIPLY</field>' +
+            '<value name="A">' +
+                '<block type="srf05"><field name="port">Port 1</field></block>' +
+            '</value>' +
+            '<value name="B">' + 
+                '<block type="math_number"><field name="NUM">10</field></block>' +
+            '</value>' +
+        '</block>',
+
+        //10.5
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="robot_move">' +
+                    '<field name="Direction">Tiến</field>' +
+                    '<field name="Velocity">50</field>' +
+                    '<field name="Duration">1</field>' +
+                '</block>'  +
+            '</next>' +
+        '</block>' +
+        '<block type="math_number" x="300" y="150"><field name="NUM">1000</field></block>' +
+        '<block type="math_arithmetic" x="300" y="250">' +
+            '<field name="OP">DIVIDE</field>' +
+            '<value name="A">' +
+                '<block type="math_number"><field name="NUM">1</field></block>' +
+            '</value>' +
+            '<value name="B">' + 
+                '<block type="math_number"><field name="NUM">4</field></block>' +
+            '</value>' +
+        '</block>',
+
+        //10.6
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="robot_move">' +
+                            '<field name="Direction">Tiến</field>' +
+                            '<field name="Velocity">50</field>' +
+                            '<field name="Duration">1</field>' +
+                            '<next>' +
+                                '<block type="wait_seconds">' +
+                                    '<field name="SECONDS">1</field>' +
+                                '</block>'  +
+                            '</next>' +
+                        '</block>'  +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>' + 
+        '<block type="math_arithmetic" x="300" y="250">' +
+            '<field name="OP">DIVIDE</field>' +
+            '<value name="A">' +
+                '<block type="math_number"><field name="NUM">1</field></block>' +
+            '</value>' +
+            '<value name="B">' + 
+                '<block type="math_number"><field name="NUM">4</field></block>' +
+            '</value>' +
+        '</block>'
+    ],
+
+    //Lesson 11
+    [
+        //11.1
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="ringled">' +
+                    '<field name="ringLedModule">Port 1</field>' + 
+                    '<field name="LED" L1="#ffffff" L3="#ffffff" L4="#ffffff" L5="#ffffff" L2="#ffffff" L6="#ffffff" L7="#ffffff" L8="#ffffff" L9="#ffffff" L10="#ffffff" L11="#ffffff" L12="#ffffff"></field>' + 
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //11.2
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="ringled">' +
+                    '<field name="ringLedModule">Port 1</field>' + 
+                    '<field name="LED" L1="#ffffff" L3="#ffffff" L4="#ffffff" L5="#ffffff" L2="#ffffff" L6="#ffffff" L7="#ffffff" L8="#ffffff" L9="#ffffff" L10="#ffffff" L11="#ffffff" L12="#ffffff"></field>' + 
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //11.3
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="ringled">' +
+                    '<field name="ringLedModule">Port 1</field>' + 
+                    '<field name="LED" L1="#ffffff" L3="#ffffff" L4="#ffffff" L5="#ffffff" L2="#ffffff" L6="#ffffff" L7="#ffffff" L8="#ffffff" L9="#ffffff" L10="#ffffff" L11="#ffffff" L12="#ffffff"></field>' + 
+                '</block>' +
+            '</next>' +
+        '</block>',
+        
+        
+        //11.4
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="playwithmatrix">' +
+                    '<field name="Port">Port 1</field>' +
+                    '<field name="Map" R1="false,false,false,false,false,false,false,false" R2="false,true,false,false,false,false,true,false" R3="true,false,true,false,false,true,false,true" R4="false,false,false,false,false,false,false,false" R5="false,false,false,false,false,false,false,false" R6="false,true,false,false,false,false,true,false" R7="false,false,true,true,true,true,false,false" R8="false,false,false,false,false,false,false,false"></field>' +
+                    '<field name="Duration">0</field>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+        
+        //11.5
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="playwithmatrix">' +
+                    '<field name="Port">Port 1</field>' +
+                    '<field name="Map" R1="false,false,false,false,false,false,false,false" R2="false,false,false,false,false,false,false,false" R3="false,false,false,false,false,false,false,false" R4="false,false,false,false,false,false,false,false" R5="false,false,false,false,false,false,false,false" R6="false,false,false,false,false,false,false,false" R7="false,false,false,false,false,false,false,false" R8="false,false,false,false,false,false,false,false"></field>' +
+                    '<field name="Duration">0</field>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //11.6
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                    '<block type="sound_sensor"><field name="port">Port 1</field></block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="playmusicnote" x="380" y="300">' +
+                                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //11.7
+        '<block type="dummy_play_block" x="250" y="50">' +
+        '</block>' +
+        '<block type="if_block" x="250" y="150">' +
+            '<value name="condition">' +
+                    '<block type="sound_sensor"><field name="port">Port 1</field></block>' +
+            '</value>' +
+        '</block>',
+
+        //11.8 TODO: refactor color sensor block
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                    '<block type="sound_sensor"><field name="port">Port 1</field></block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="playmusicnote" x="380" y="300">' +
+                                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
+
+        //11.9 TODO: refactor color sensor block
+        '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="while">' +
+                    '<statement name="actions">' +
+                        '<block type="if1">' +
+                            '<value name="condition">' +
+                                    '<block type="sound_sensor"><field name="port">Port 1</field></block>' +
+                            '</value>' +
+                            '<statement name="command">' +
+                                '<block type="playmusicnote" x="380" y="300">' +
+                                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                                '</block>'  +
+                            '</statement>' +
+                        '</block>' +
+                    '</statement>' +
+                '</block>' +
+            '</next>' +
+        '</block>',
     ]
 ];
