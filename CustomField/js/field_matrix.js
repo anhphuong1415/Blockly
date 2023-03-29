@@ -402,10 +402,10 @@ CustomFields.FieldMatrix.prototype.widgetDispose_ = function () {
 
 CustomFields.FieldMatrix.prototype.toXml = function (fieldElement) {
   fieldElement.setAttribute('R1', this.value_.R1);
-  fieldElement.setAttribute('R3', this.value_.R2);
-  fieldElement.setAttribute('R4', this.value_.R3);
-  fieldElement.setAttribute('R5', this.value_.R4);
-  fieldElement.setAttribute('R2', this.value_.R5);
+  fieldElement.setAttribute('R2', this.value_.R2);
+  fieldElement.setAttribute('R3', this.value_.R3);
+  fieldElement.setAttribute('R4', this.value_.R4);
+  fieldElement.setAttribute('R5', this.value_.R5);
   fieldElement.setAttribute('R6', this.value_.R6);
   fieldElement.setAttribute('R7', this.value_.R7);
   fieldElement.setAttribute('R8', this.value_.R8);

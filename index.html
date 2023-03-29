@@ -30,6 +30,7 @@
     <script src="CustomField/js/field_matrix.js"></script>
     <script src="CustomField/js/field_ring.js"></script>
     <script src="CustomField/js/field_7_segments.js"></script>
+    <script src="CustomField/js/field_traffic_light.js"></script>
     <script src="GenneratorForRange.js"></script>
     <script src="custom_category_es6.js"></script>
     <script src="toolbox_label_es6.js"></script>
@@ -41,6 +42,7 @@
     <link rel="stylesheet" type="text/css" href="CustomField/css/matrixLed.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/ringled.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/field_7ledSegment.css">
+    <link rel="stylesheet" type="text/css" href="CustomField/css/traffic_light.css">
 </head>
 
 <body style="background-image: url(Utils/Background.png); background-size: cover;">
@@ -69,6 +71,12 @@
                     <field name="Duration">0</field>
                 </block>
                 <block type="field_ledSegments">
+                </block>
+                <block type="relay">
+                </block>
+                <block type="single_led">
+                </block>
+                <block type="traffic_light">
                 </block>
                 <block type="ringled">
                     <field name="ringLedModule">Port 1</field>

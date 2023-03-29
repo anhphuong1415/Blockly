@@ -782,3 +782,91 @@ Blockly.Blocks['field_ring'] = {
     this.setColour(285);
   },
 };
+
+Blockly.Blocks['relay'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(
+        new Blockly.FieldImage('Utils/BlockIcon/relay.png', 30, 30, {
+          alt: '*',
+          flipRtl: 'FALSE',
+        }),
+      )
+      .appendField('Điều khiển Replay')
+      .appendField(
+        new Blockly.FieldDropdown([
+          ['Đóng', 'true'],
+          ['Mở', 'false'],
+        ]),
+        'replayState',
+      )
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(135);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
+Blockly.Blocks['single_led'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(
+        new Blockly.FieldImage('Utils/BlockIcon/rgb_led.png', 30, 30, {
+          alt: '*',
+          flipRtl: 'FALSE',
+        }),
+      )
+      .appendField('Điều khiển Led')
+      .appendField(
+        new Blockly.FieldDropdown([
+          [
+            {
+              src: 'Utils/BlockIcon/light_on.png',
+              width: 30,
+              height: 30,
+              alt: 'Bật',
+            },
+            'true',
+          ],
+          [
+            {
+              src: 'Utils/BlockIcon/light_off.png',
+              width: 30,
+              height: 30,
+              alt: 'Tắt',
+            },
+            'false',
+          ],
+        ]),
+        'singleLedState',
+      )
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(135);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
+Blockly.Blocks['traffic_light'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(
+        new Blockly.FieldImage('Utils/BlockIcon/rgb_led.png', 30, 30, {
+          alt: '*',
+          flipRtl: 'FALSE',
+        }),
+      )
+      .appendField('Điều khiển đèn giao thông')
+      .appendField(new CustomFields.FieldTrafficLight(), 'Lights')
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(135);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};

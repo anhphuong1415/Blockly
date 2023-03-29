@@ -513,3 +513,64 @@ Blockly.JavaScript['field_ring'] = function (block) {
   console.log('CODE GEN Vel: ' + code);
   return code;
 };
+
+Blockly.JavaScript['field_ledSegments'] = function (block) {
+  var map = block.getFieldValue('Map');
+
+  const payload = JSON.stringify({
+    type: 'LED_7',
+    message: {
+      map,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('LED_7 MAP: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['relay'] = function (block) {
+  var state = block.getFieldValue('replayState');
+
+  const payload = JSON.stringify({
+    type: 'RELAY',
+    message: {
+      state,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('RELAY: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['single_led'] = function (block) {
+  var state = block.getFieldValue('singleLedState');
+
+  const payload = JSON.stringify({
+    type: 'LED_ONLY',
+    message: {
+      state,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('SINGLE LED: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['traffic_light'] = function (block) {
+  var greenLight = block.getFieldValue('Lights').greenLight;
+  var yellowLight = block.getFieldValue('Lights').yellowLight;
+  var redLight = block.getFieldValue('Lights').redLight;
+
+  const payload = JSON.stringify({
+    type: 'TRAFFIC_LIGHT',
+    message: {
+      greenLight,
+      yellowLight,
+      redLight
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('TRAFFIC_LIGHT: ' + code);
+  return code;
+};
+

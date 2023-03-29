@@ -52,11 +52,6 @@ CustomFields.FieldSegmentLed.prototype.CURSOR = 'pointer';
 CustomFields.FieldSegmentLed.prototype.SERIALIZABLE = true;
 CustomFields.FieldSegmentLed.prototype.editorListeners_ = [];
 
-CustomFields.FieldSegmentLed.prototype.initView = function () {
-  CustomFields.FieldSegmentLed.superClass_.initView.call(this);
-  this.createView_();
-};
-
 CustomFields.FieldSegmentLed.prototype.doClassValidation_ = function (newValue) {
     if (newValue.segment1 == undefined 
         || newValue.segment1 > 127
@@ -160,15 +155,38 @@ CustomFields.FieldSegmentLed.prototype.createWidgetView = function () {
 };
 
 CustomFields.FieldSegmentLed.prototype.onSegmentClick = function (event) {
+  var segmentArray = [
+    this.value_.segment1,
+    this.value_.segment2,
+    this.value_.segment3,
+    this.value_.segment4,
+  ]
     var curSegment = event.currentTarget ;
+    var _module = parseInt(curSegment.id[7]);
+    var _segment = parseInt(curSegment.id[8]);
     if(curSegment.style.opacity != '0.3')
     {
       curSegment.style.opacity = '0.3'
+      let newModule = segmentArray[_module - 1].split(',').map(v => v !== 'false');
+      newModule[_segment - 1] = false;
+      segmentArray[_module - 1] = newModule.join(',');
     }
     else
     {
       curSegment.style.opacity = '1.0';
+      let newModule = segmentArray[_module - 1].split(',').map(v => v !== 'false');
+      newModule[_segment - 1] = true;
+      segmentArray[_module - 1] = newModule.join(',');
     }
+
+    this.isDirty_ = true;
+    var value = {};
+    value.segment1 = segmentArray[0];
+    value.segment2 = segmentArray[1];
+    value.segment3 = segmentArray[2];
+    value.segment4 = segmentArray[3];
+
+    this.setValue(value);
 };
 
 CustomFields.FieldSegmentLed.prototype.updateSize_ = function () {
