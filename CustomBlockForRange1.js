@@ -25,9 +25,9 @@ Blockly.Blocks['playmusicnote'] = {
         ]),
         'Note',
       )
-      .appendField('trong ')
-      .appendField(new CustomFields.FieldCalculate(0, 0, 255, 1), 'Duration')
-      .appendField('giây');
+      .appendField('trong ');
+      this.appendValueInput('Duration');
+      this.appendDummyInput().appendField('giây');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -50,9 +50,9 @@ Blockly.Blocks['rgb_led'] = {
       .appendField('Led RGB sáng màu')
       .appendField(new Blockly.FieldColour('#00cccc'), 'color_left')
       .appendField(new Blockly.FieldColour('#00cccc'), 'color_right')
-      .appendField('trong ')
-      .appendField(new CustomFields.FieldCalculate(0, 0, 255, 1), 'duration')
-      .appendField('giây');
+      .appendField('trong ');
+      this.appendValueInput('Duration');
+      this.appendDummyInput().appendField('giây');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -76,9 +76,9 @@ Blockly.Blocks['robot_move'] = {
       )
       .appendField('với vận tốc')
       .appendField(new CustomFields.FieldVelocity(0, 0, 255, 1), 'Velocity')
-      .appendField('trong')
-      .appendField(new CustomFields.FieldCalculate(0, 0, 255, 1), 'Duration')
-      .appendField('giây');
+      .appendField('trong');
+    this.appendValueInput('Duration');
+    this.appendDummyInput().appendField('giây');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -109,10 +109,10 @@ Blockly.Blocks['playwithmatrix'] = {
       )
       .appendField(' hiển thị ')
       .appendField(new CustomFields.FieldMatrix(), 'Map')
-      .appendField('trong')
-      .appendField(new CustomFields.FieldCalculate(0, 0, 255, 1), 'Duration')
-      .appendField('giây');
-    this.setInputsInline(false);
+      .appendField('trong');
+    this.appendValueInput('Duration');
+    this.appendDummyInput().appendField('giây');
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);
@@ -452,9 +452,9 @@ Blockly.Blocks['motorselect'] = {
       )
       .appendField('quay với vận tốc')
       .appendField(new CustomFields.FieldVelocity(1, 1, 255, 1), 'velocity')
-      .appendField('trong')
-      .appendField(new CustomFields.FieldCalculate(1, 0, 255, 1), 'duration')
-      .appendField('giây');
+      .appendField('trong');
+      this.appendValueInput('Duration');
+    this.appendDummyInput().appendField('giây');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);
@@ -866,6 +866,38 @@ Blockly.Blocks['traffic_light'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(135);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
+Blockly.Blocks['keyboard'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(
+        new Blockly.FieldImage('Utils/BlockIcon/sound_sensor.png', 30, 30, {
+          alt: '*',
+          flipRtl: 'FALSE',
+        }),
+      )
+      .appendField('Nút')
+      .appendField(
+        new CustomFields.FieldKeyboard(),
+        'Key',
+      )
+      .appendField('được bấm');
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
+Blockly.Blocks['calculator'] = {
+  init: function () {
+    this.appendDummyInput().appendField(new CustomFields.FieldCalculate(1, 0, 1000, 1), 'Value');
+    this.setOutput(true, null);
+    this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
   },

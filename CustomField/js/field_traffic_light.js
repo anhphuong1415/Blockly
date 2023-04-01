@@ -43,6 +43,7 @@ CustomFields.FieldTrafficLight.fromJson = function (options) {
 CustomFields.FieldTrafficLight.prototype.CURSOR = 'pointer';
 CustomFields.FieldTrafficLight.prototype.SERIALIZABLE = true;
 CustomFields.FieldTrafficLight.prototype.editorListeners_ = [];
+CustomFields.FieldTrafficLight.BackgroundLight = ['green', 'yellow', 'red'];
 
 CustomFields.FieldTrafficLight.prototype.initView = function () {
   CustomFields.FieldTrafficLight.superClass_.initView.call(this);
@@ -58,12 +59,12 @@ CustomFields.FieldTrafficLight.prototype.doClassValidation_ = function (newValue
     if (newValue.yellowLight == undefined 
         || (newValue.yellowLight != 'true'
         && newValue.yellowLight != 'false')) {
-      newValue.yellowLight = 'true';
+      newValue.yellowLight = 'false';
     }
     if (newValue.redLight == undefined 
         || (newValue.redLight != 'true'
         && newValue.redLight != 'false')) {
-      newValue.redLight = 'true';
+      newValue.redLight = 'false';
     }
     return newValue;
 };
@@ -82,10 +83,9 @@ CustomFields.FieldTrafficLight.prototype.showEditor_ = function() {
 
 CustomFields.FieldTrafficLight.prototype.styleDiv = function () {
     Blockly.WidgetDiv.DIV.style.width = '22em';
-    Blockly.WidgetDiv.DIV.style.height = '16em';
-    Blockly.WidgetDiv.DIV.style.position = 'absolute';
+    Blockly.WidgetDiv.DIV.style.height = '10em';
     Blockly.WidgetDiv.DIV.style.left = 'calc(50% - 11em)';
-    Blockly.WidgetDiv.DIV.style.top = 'calc(50% + 8em)';
+    Blockly.WidgetDiv.DIV.style.top = 'calc(50% - 5em)';
     Blockly.WidgetDiv.DIV.style.backgroundColor = '#030303dc';
     Blockly.WidgetDiv.DIV.style.borderRadius = '2%';
     Blockly.WidgetDiv.DIV.style.border = 'solid';
@@ -93,14 +93,17 @@ CustomFields.FieldTrafficLight.prototype.styleDiv = function () {
     Blockly.WidgetDiv.DIV.style.color = '#a8d8f8';
     Blockly.WidgetDiv.DIV.style.boxShadow = '0 0 0.4em 0 #79c3f4';
     Blockly.WidgetDiv.DIV.style.textAlign = 'center';
-    Blockly.WidgetDiv.DIV.style.display = 'block';
-    Blockly.WidgetDiv.DIV.style.alignItems = 'center';
-    Blockly.WidgetDiv.DIV.style.justifyContent = 'center';
 };
 
 CustomFields.FieldTrafficLight.prototype.createWidgetView = function () {
+  var LightsArray = [
+    this.value_.greenLight,
+    this.value_.yellowLight,
+    this.value_.redLight,
+  ]
+
     var editorDiv = document.createElement('div');
-    editorDiv.textContent = 'TRAFFIC LIGHTS';
+    editorDiv.textContent = "TRAFFIC LIGHTS";
 
     var lightsModule = document.createElement('div');
     lightsModule.id = 'trafficLights';
@@ -109,7 +112,7 @@ CustomFields.FieldTrafficLight.prototype.createWidgetView = function () {
     {
         var Light_ = document.createElement('div');
         Light_.className = 'Light';
-        Light_.id = i;
+        Light_.id = 'TrafficLight' + i;
         lightsModule.appendChild(Light_);
         this.editorListeners_.push(
             Blockly.bindEvent_(Light_, this.getMouseUp(), this, this.onLightClick),
@@ -120,8 +123,6 @@ CustomFields.FieldTrafficLight.prototype.createWidgetView = function () {
     return editorDiv;
 };
 
-CustomFields.FieldTrafficLight.BackgroundLight = ["green", "yellow", "red"]
-
 CustomFields.FieldTrafficLight.prototype.onLightClick = function (event) {
     var LightsArray = [
         this.value_.greenLight,
@@ -130,27 +131,27 @@ CustomFields.FieldTrafficLight.prototype.onLightClick = function (event) {
       ]
     
     var curLight = event.currentTarget ;
-    var curLightId = parseInt(curLight.id[0]);
+    var curLightId = parseInt(curLight.id[12]);
+    if(LightsArray[curLightId] == 'false')
+    {
+      curLight.style.backgroundColor = CustomFields.FieldTrafficLight.BackgroundLight[curLightId];
+      LightsArray[curLightId] = 'true';
 
-    Array.from(document.getElementsByClassName('Light')).forEach(element => {
-        var id = parseInt(element.id[0]);
-        if(LightsArray[id] == 'false' && element.id == curLight.id)
-        {
-            element.style.backgroundColor = CustomFields.FieldTrafficLight.BackgroundLight[id];
-            LightsArray[id] = 'true';
-        }
-        else
-        {
-            LightsArray[id] = 'false';
-            element.style.backgroundColor = "#030303dc";
-        }
-    }); 
+      Array.from(document.getElementsByClassName('Light')).forEach(element => {
+          var id = parseInt(element.id[12]);
+          if(element.id != curLight.id)
+          {
+              LightsArray[id] = 'false';
+              element.style.backgroundColor = "#030303dc";
+          }
+        }); 
+    }
 
     this.isDirty_ = true;
     var value = {};
-    value.greenLight = segmentArray[0];
-    value.yellowLight = segmentArray[1];
-    value.redLight = segmentArray[2];
+    value.greenLight = LightsArray[0];
+    value.yellowLight = LightsArray[1];
+    value.redLight = LightsArray[2];
 
     this.setValue(value);
   };
@@ -174,14 +175,14 @@ CustomFields.FieldTrafficLight.prototype.render_ = function () {
         this.value_.yellowLight,
         this.value_.redLight,
     ]
-    for (let i = 0; i < 3; i++) {
+    for (var i = 0; i < 3; i++) {
       if(LightsArray[i] == 'true')
       {
-        this.Lights_[i].style.fill = CustomFields.FieldTrafficLight.BackgroundLight[id];
+        this.Lights_[i].style.fill = CustomFields.FieldTrafficLight.BackgroundLight[i];
       }
       else
       {
-        this.Lights_[i].style.fill = "#030303dc"
+        this.Lights_[i].style.fill = "#000";
       }
     }
     this.updateSize_();
@@ -194,14 +195,15 @@ CustomFields.FieldTrafficLight.prototype.renderEditor_ = function () {
         this.value_.redLight,
     ]
     
-    for (var i = 0; i < 3; ++i) {
+    for (var i = 0; i < 3; i++) {
         if(LightsArray[i] == 'true')
         {
-            document.getElementById(id).style.backgroundColor = CustomFields.FieldTrafficLight.BackgroundLight[id];
+          document.getElementById("TrafficLight" + i).style.backgroundColor 
+            = CustomFields.FieldTrafficLight.BackgroundLight[i];
         }
         else
         {
-            document.getElementById(id).style.backgroundColor = "#030303dc";
+            document.getElementById("TrafficLight" + i).style.backgroundColor = "#030303dc";
         }
     }
 };
@@ -218,6 +220,11 @@ CustomFields.FieldTrafficLight.prototype.widgetDispose_ = function () {
   };
 
   CustomFields.FieldTrafficLight.prototype.createView_ = function () {
+    var LightsArray = [
+      this.value_.greenLight,
+      this.value_.yellowLight,
+      this.value_.redLight,
+    ]
     this.matrixGroup_ = Blockly.utils.dom.createSvgElement(
       'g',
       {
@@ -235,7 +242,7 @@ CustomFields.FieldTrafficLight.prototype.widgetDispose_ = function () {
             cy: 20,
             r: 20,
             stoke: "#fff",
-            fill: '#000',
+            fill: (LightsArray[i] == 'true') ? CustomFields.FieldTrafficLight.BackgroundLight[i] : '#000',
             },
             this.matrixGroup_,
         );

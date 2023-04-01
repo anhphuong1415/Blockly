@@ -31,6 +31,7 @@
     <script src="CustomField/js/field_ring.js"></script>
     <script src="CustomField/js/field_7_segments.js"></script>
     <script src="CustomField/js/field_traffic_light.js"></script>
+    <script src="CustomField/js/field_keyboard.js"></script>
     <script src="GenneratorForRange.js"></script>
     <script src="custom_category_es6.js"></script>
     <script src="toolbox_label_es6.js"></script>
@@ -43,6 +44,7 @@
     <link rel="stylesheet" type="text/css" href="CustomField/css/ringled.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/field_7ledSegment.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/traffic_light.css">
+    <link rel="stylesheet" type="text/css" href="CustomField/css/keyboards.css">
 </head>
 
 <body style="background-image: url(Utils/Background.png); background-size: cover;">
@@ -52,7 +54,9 @@
                 <block type="robot_move">
                     <field name="Direction">Tiến</field>
                     <field name="Velocity">0</field>
-                    <field name="Duration">0</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="servo">
                     <field name="Servo_Select">Servo_1</field>
@@ -61,14 +65,18 @@
                 <block type="motorselect">
                     <field name="MotorSelect">Left</field>
                     <field name="velocity">1</field>
-                    <field name="duration">1</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="stop_move"></block>
             </category>
             <category name="Biểu diễn" categorystyle="list_category">
                 <block type="playmusicnote">
                     <field name="Note">C</field>
-                    <field name="Duration">0</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="field_ledSegments">
                 </block>
@@ -81,11 +89,17 @@
                 <block type="ringled">
                     <field name="ringLedModule">Port 1</field>
                 </block>
-                <block type="playwithmatrix"></block>
+                <block type="playwithmatrix">
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
+                </block>
                 <block type="rgb_led">
                     <field name="color_left">#00cccc</field>
                     <field name="color_right">#00cccc</field>
-                    <field name="duration">0</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="turnoffledrbg">
                 </block>
@@ -108,14 +122,18 @@
                     <field name="side">bên trái</field>
                     <field name="color">màu trắng</field>
                 </block>
+                <block type="keyboard">
+                </block>
             </category>
             <category name="Tính toán" categorystyle="list_category">
                 <block type="logic_operation">
                     <field name="OP">AND</field>
                 </block>
-                <block type="math_number">
-                    <field name="NUM">0</field>
+                <block type="calculator">
                 </block>
+                <!-- <block type="math_number">
+                    <field name="NUM">1</field>
+                </block> -->
                 <block type="math_arithmetic">
                     <field name="OP">ADD</field>
                     <value name="A">
@@ -420,6 +438,7 @@
 
             function handleSave() {
                 const data = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace()));
+                console.log(data);
                 let fileName = prompt("File Name", "Untitled");
                 if (fileName == null || fileName == "") {
                 } else {

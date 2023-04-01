@@ -1,6 +1,10 @@
 #trafficLights{
-    display: flexbox;
-    flex-direction: column;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-items:center;
+    justify-content: space-around;
 }
 
 .Light{
