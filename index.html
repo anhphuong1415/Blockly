@@ -13,6 +13,7 @@
     <script src="Libs/js/blockly/blocks_compressed.js"></script>
     <script src="Libs/js/blockly/javascript_compressed.js"></script>
     <script src="toolbox_standard.js"></script>
+    <script src="Lesson.js"></script>
     <script src="Libs/js/blockly/msg/vi.js"></script>
     <script src="CustomBlockForRange1.js"></script>
     <script src="wait_block.js"></script>
@@ -226,6 +227,9 @@
                 tmpCate.setDisabled(urlParams.get(i));
             }
 
+            var lesson = urlParams.get('lesson');
+            var sub_lesson = urlParams.get('subLesson');
+
 
             function importScript() {
                 var xml = Blockly.Xml.textToDom(window.currentFile.content);
@@ -236,8 +240,15 @@
             if (window.currentFile) {
                 importScript()
             } else {
-                Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
-                    workspacePlayground);
+                if(!lesson || !sub_lesson)
+                {
+                    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspacePlayground);
+                }
+                else
+                {
+                    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom('<xml style="display: none">' + Lesson[lesson - 1][sub_lesson - 1] + '</xml>')
+                                            , workspacePlayground);
+                }
             }
             window.workspacePlayground = workspacePlayground;
             var myInterpreter = null;
@@ -362,8 +373,6 @@
 
             function handleGenCode() {
                 stopButton = !Boolean(stopButton);
-                console.log(stopButton.toString());
-                console.log(latestCode);
                 if (Boolean(stopButton)) {
                     document.getElementById("RUN").style.background = "url(Utils/Icon/svg/Stop.svg)";
                     resetStepUi();
