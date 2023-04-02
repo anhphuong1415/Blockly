@@ -597,3 +597,10 @@ Blockly.JavaScript['calculator'] = function (block) {
   console.log('Cal: ' + [code, order]);
   return [code, order];
 };
+
+Blockly.JavaScript['wait_until'] = function (block) {
+  var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'while(' + value_condition + ')\n' + '{}\n';
+  return code;
+};

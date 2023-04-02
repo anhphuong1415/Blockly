@@ -902,3 +902,18 @@ Blockly.Blocks['calculator'] = {
     this.setHelpUrl('');
   },
 };
+
+Blockly.Blocks['wait_until'] = {
+  init: function () {
+    this.appendValueInput("condition")
+      .appendField("Chờ đến khi")
+        .setCheck("Boolean");
+    this.setColour(285);
+    // this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    // this.setInputsInline(false, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
