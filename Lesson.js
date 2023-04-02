@@ -9,39 +9,53 @@ Lesson =
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Tiến</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field></block>',
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Tiến</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">5</field></block>' + 
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+ + 
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field></block>',
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Tiến</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">5</field></block>' + 
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+ 
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field></block>',
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Rẽ trái</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' + 
                         '<block type="robot_move">' +
                             '<field name="Direction">Rẽ phải</field>' +
                             '<field name="Velocity">10</field>' + 
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' + 
                     '</next>' +
                 '</block>' +
@@ -50,7 +64,9 @@ Lesson =
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
@@ -58,7 +74,9 @@ Lesson =
                 '<block type="robot_move">'+
                     '<field name="Direction">Rẽ trái</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' + 
                         '<block type="robot_move">' +
                             '<field name="Direction">Lùi</field>' +
@@ -72,12 +90,16 @@ Lesson =
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ phải</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Tiến</field>' +
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>',
@@ -87,19 +109,25 @@ Lesson =
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' +
             '</next>' +
         '</block>' + 
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Tiến</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Tiến</field>' +
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>',
@@ -109,12 +137,16 @@ Lesson =
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' + 
                         '<block type="robot_move">' +
                             '<field name="Direction">Tiến</field>' +
                             '<field name="Velocity">10</field>' + 
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' + 
                     '</next>' +
                 '</block>' +
@@ -123,27 +155,36 @@ Lesson =
         '<block type="robot_move" x="430" y="200">' +
             '<field name="Direction">Rẽ trái</field>' +
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>' + 
         '<block type="robot_move" x="400" y="250">'+
             '<field name="Direction">Lùi</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Lùi</field>' +
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>', 
 
-        '<block type="dummy_play_block" x="400" y="50"></block>'
+        '<block type="dummy_play_block" x="150" y="50"></block>'
     ],
     [
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="playmusicnote" x="430" y="200">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
@@ -151,7 +192,9 @@ Lesson =
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' +
             '</next>' +
         '</block>',
@@ -161,10 +204,15 @@ Lesson =
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' +
                         '<block type="playmusicnote">' +
-                            '<field name="Note">C</field><field name="Duration">1</field>' +
+                            '<field name="Note">C</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +
                 '</block>' +
@@ -175,7 +223,9 @@ Lesson =
         '<block type="rgb_led" x="430" y="200">' +
             '<field name="color_left">#ff0000</field>' + 
             '<field name="color_right">#ff0000</field>'+
-            '<field name="duration">1</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
@@ -183,12 +233,16 @@ Lesson =
                 '<block type="rgb_led">' +
                     '<field name="color_left">#ff0000</field>' + 
                     '<field name="color_right">#ff0000</field>'+
-                    '<field name="duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' + 
                         '<block type="rgb_led" x="430" y="200">' +
                             '<field name="color_left">#ff0000</field>' + 
                             '<field name="color_right">#ff0000</field>'+
-                            '<field name="duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +
                 '</block>' +
@@ -200,22 +254,30 @@ Lesson =
                 '<block type="rgb_led">' +
                     '<field name="color_left">#ff0000</field>' + 
                     '<field name="color_right">#ff0000</field>'+
-                    '<field name="duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' + 
                         '<block type="rgb_led" x="430" y="200">' +
                             '<field name="color_left">#000000</field>' + 
                             '<field name="color_right">#000000</field>'+
-                            '<field name="duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                             '<next>' +
                                 '<block type="rgb_led" x="430" y="200">' +
                                     '<field name="color_left">#ff0000</field>' + 
                                     '<field name="color_right">#ff0000</field>'+
-                                    '<field name="duration">1</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                     '<next>' +
                                         '<block type="rgb_led" x="430" y="200">' +
                                             '<field name="color_left">#000000</field>' + 
                                             '<field name="color_right">#000000</field>'+
-                                            '<field name="duration">1</field>' +
+                                            '<value name="Duration">' +
+                                                '<block type="calculator"><field name="Value">1</field></block>' +
+                                            '</value>'+
                                         '</block>' +  
                                     '</next>' +
                                 '</block>' +
@@ -231,12 +293,16 @@ Lesson =
                 '<block type="rgb_led">' +
                     '<field name="color_left">#ff0000</field>' + 
                     '<field name="color_right">#ff0000</field>'+
-                    '<field name="duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' + 
                         '<block type="rgb_led">' +
                             '<field name="color_left">#000000</field>' + 
                             '<field name="color_right">#000000</field>'+
-                            '<field name="duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +
                 '</block>' +
@@ -246,13 +312,22 @@ Lesson =
     [
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="playmusicnote" x="430" y="130">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>' +
         '<block type="playmusicnote" x="450" y="200">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>' + 
         '<block type="playmusicnote" x="470" y="250">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' + 
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
@@ -263,24 +338,34 @@ Lesson =
             '</next>' +
         '</block>' +
         '<block type="playmusicnote" x="450" y="200">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="playmusicnote" x="430" y="130">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ trái</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Rẽ phải</field>' +
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>',
@@ -290,7 +375,9 @@ Lesson =
                 '<block type="rgb_led">' +
                     '<field name="color_left">#ff0000</field>' + 
                     '<field name="color_right">#000000</field>'+
-                    '<field name="duration">10</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' +
             '</next>' +
         '</block>',
@@ -300,40 +387,54 @@ Lesson =
                 '<block type="rgb_led">' +
                     '<field name="color_left">#ff6600</field>' + 
                     '<field name="color_right">#000000</field>'+
-                    '<field name="duration">10</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' +
             '</next>' +
         '</block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Rẽ trái</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">5</field></block>' + 
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ phải</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">1</field></block>',
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' +
                 '<block type="rgb_led">' +
                     '<field name="color_left">#ff0000</field>' + 
                     '<field name="color_right">#000000</field>'+
-                    '<field name="duration">10</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">10</field></block>' +
+                    '</value>'+
                         '<next>' +
                             '<block type="robot_move">' +
                                 '<field name="Direction">Rẽ trái</field>' +
                                 '<field name="Velocity">10</field>' + 
-                                '<field name="Duration">1</field>' +
+                                '<value name="Duration">' +
+                                    '<block type="calculator"><field name="Value">1</field></block>' +
+                                '</value>'+
                                     '<next>' +
                                         '<block type="rgb_led">' +
                                             '<field name="color_left">#000000</field>' + 
                                             '<field name="color_right">#ff0000</field>'+
-                                            '<field name="duration">10</field>' +
+                                            '<value name="Duration">' +
+                                                '<block type="calculator"><field name="Value">10</field></block>' +
+                                            '</value>'+
                                                 '<next>' +
                                                     '<block type="robot_move">'+
                                                     '<field name="Direction">Rẽ phải</field>'+
                                                     '<field name="Velocity">10</field>' + 
-                                                    '<field name="Duration">1</field></block>' +
+                                                    '<value name="Duration">' +
+                                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                                    '</value>'+
                                                 '</next>' +
                                         '</block>' +
                                     '</next>' +
@@ -351,14 +452,18 @@ Lesson =
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ trái</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">100</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ trái</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">10</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
                 '<next>' +
                     '<block type="stop_move"></block>' +
                 '</next>' +
@@ -371,10 +476,15 @@ Lesson =
                 '<block type="rgb_led" x="430" y="200">' +
                     '<field name="color_left">#66ffff</field>' + 
                     '<field name="color_right">#000000</field>'+
-                    '<field name="duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' +
                         '<block type="playmusicnote" x="430" y="130">' +
-                            '<field name="Note">C</field><field name="Duration">1</field>' +
+                            '<field name="Note">C</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +    
                 '</block>' +
@@ -384,26 +494,36 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' + 
                 '<block type="playmusicnote" x="430" y="130">' +
-                    '<field name="Note">C</field><field name="Duration">1</field>' +
-                        '<next>' + 
-                            '<block type="rgb_led" x="430" y="200">' +
-                                '<field name="color_left">#66ffff</field>' + 
-                                '<field name="color_right">#000000</field>'+
-                                '<field name="duration">1</field>' +
-                                '<next>' +
-                                    '<block type="playmusicnote" x="430" y="130">' +
-                                        '<field name="Note">C</field><field name="Duration">1</field>' +
-                                            '<next>' +
-                                                '<block type="rgb_led" x="430" y="200">' +
-                                                    '<field name="color_left">#66ffff</field>' + 
-                                                    '<field name="color_right">#000000</field>'+
-                                                    '<field name="duration">1</field>' +
-                                                '</block>' +  
-                                            '</next>' +
-                                    '</block>' +
-                                '</next>' +    
-                            '</block>' +
-                        '</next>' +
+                    '<field name="Note">C</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
+                    '<next>' + 
+                        '<block type="rgb_led" x="430" y="200">' +
+                            '<field name="color_left">#66ffff</field>' + 
+                            '<field name="color_right">#000000</field>'+
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
+                            '<next>' +
+                                '<block type="playmusicnote" x="430" y="130">' +
+                                    '<field name="Note">C</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
+                                    '<next>' +
+                                        '<block type="rgb_led" x="430" y="200">' +
+                                            '<field name="color_left">#66ffff</field>' + 
+                                            '<field name="color_right">#000000</field>'+
+                                            '<value name="Duration">' +
+                                                '<block type="calculator"><field name="Value">1</field></block>' +
+                                            '</value>'+
+                                        '</block>' +  
+                                    '</next>' +
+                                '</block>' +
+                            '</next>' +    
+                        '</block>' +
+                    '</next>' +
                 '</block>' +
             '</next>' +
         '</block>',
@@ -411,26 +531,36 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' + 
                 '<block type="playmusicnote" x="430" y="130">' +
-                    '<field name="Note">A</field><field name="Duration">1</field>' +
-                        '<next>' + 
-                            '<block type="rgb_led" x="430" y="200">' +
-                                '<field name="color_left">#66ffff</field>' + 
-                                '<field name="color_right">#000000</field>'+
-                                '<field name="duration">1</field>' +
-                                '<next>' +
-                                    '<block type="playmusicnote" x="430" y="130">' +
-                                        '<field name="Note">F</field><field name="Duration">1</field>' +
-                                            '<next>' +
-                                                '<block type="rgb_led" x="430" y="200">' +
-                                                    '<field name="color_left">#66ffff</field>' + 
-                                                    '<field name="color_right">#000000</field>'+
-                                                    '<field name="duration">1</field>' +
-                                                '</block>' +  
-                                            '</next>' +
-                                    '</block>' +
-                                '</next>' +    
-                            '</block>' +
-                        '</next>' +
+                    '<field name="Note">A</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
+                    '<next>' + 
+                        '<block type="rgb_led" x="430" y="200">' +
+                            '<field name="color_left">#66ffff</field>' + 
+                            '<field name="color_right">#000000</field>'+
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
+                            '<next>' +
+                                '<block type="playmusicnote" x="430" y="130">' +
+                                    '<field name="Note">F</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
+                                    '<next>' +
+                                        '<block type="rgb_led" x="430" y="200">' +
+                                            '<field name="color_left">#66ffff</field>' + 
+                                            '<field name="color_right">#000000</field>'+
+                                            '<value name="Duration">' +
+                                                '<block type="calculator"><field name="Value">1</field></block>' +
+                                            '</value>'+
+                                        '</block>' +  
+                                    '</next>' +
+                                '</block>' +
+                            '</next>' +    
+                        '</block>' +
+                    '</next>' +
                 '</block>' +
             '</next>' +
         '</block>',
@@ -441,26 +571,36 @@ Lesson =
                     '<field name="NAME">3</field>' +
                         '<statement name="command">' +
                             '<block type="playmusicnote" x="430" y="130">' +
-                                '<field name="Note">A</field><field name="Duration">1</field>' +
-                                    '<next>' + 
-                                        '<block type="rgb_led" x="430" y="200">' +
-                                            '<field name="color_left">#66ffff</field>' + 
-                                            '<field name="color_right">#000000</field>'+
-                                            '<field name="duration">1</field>' +
-                                            '<next>' +
-                                                '<block type="playmusicnote" x="430" y="130">' +
-                                                    '<field name="Note">F</field><field name="Duration">1</field>' +
-                                                        '<next>' +
-                                                            '<block type="rgb_led" x="430" y="200">' +
-                                                                '<field name="color_left">#66ffff</field>' + 
-                                                                '<field name="color_right">#000000</field>'+
-                                                                '<field name="duration">1</field>' +
-                                                            '</block>' +  
-                                                        '</next>' +
-                                                '</block>' +
-                                            '</next>' +    
-                                        '</block>' +
-                                    '</next>' +
+                                '<field name="Note">A</field>' +
+                                '<value name="Duration">' +
+                                    '<block type="calculator"><field name="Value">1</field></block>' +
+                                '</value>'+
+                                '<next>' + 
+                                    '<block type="rgb_led" x="430" y="200">' +
+                                        '<field name="color_left">#66ffff</field>' + 
+                                        '<field name="color_right">#000000</field>'+
+                                        '<value name="Duration">' +
+                                            '<block type="calculator"><field name="Value">1</field></block>' +
+                                        '</value>'+
+                                        '<next>' +
+                                            '<block type="playmusicnote" x="430" y="130">' +
+                                                '<field name="Note">F</field>' +
+                                                '<value name="Duration">' +
+                                                    '<block type="calculator"><field name="Value">1</field></block>' +
+                                                '</value>'+
+                                                '<next>' +
+                                                    '<block type="rgb_led" x="430" y="200">' +
+                                                        '<field name="color_left">#66ffff</field>' + 
+                                                        '<field name="color_right">#000000</field>'+
+                                                        '<value name="Duration">' +
+                                                            '<block type="calculator"><field name="Value">1</field></block>' +
+                                                        '</value>'+
+                                                    '</block>' +  
+                                                '</next>' +
+                                            '</block>' +
+                                        '</next>' +    
+                                    '</block>' +
+                                '</next>' +
                             '</block>' +
                         '</statement>' +
                 '</block>' +
@@ -469,7 +609,9 @@ Lesson =
         '<block type="robot_move" x="450" y="330">'+
             '<field name="Direction">Tiến</field>'+
             '<field name="Velocity">10</field>' + 
-            '<field name="Duration">10</field>'+
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
         '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
@@ -477,32 +619,44 @@ Lesson =
                 '<block type="robot_move" x="450" y="330">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">10</field>'+
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">10</field></block>' +
+                    '</value>'+
                     '<next>' +
                         '<block type="loop">' +
                             '<field name="NAME">3</field>' +
                                 '<statement name="command">' +
                                     '<block type="playmusicnote" x="430" y="130">' +
-                                        '<field name="Note">A</field><field name="Duration">1</field>' +
-                                            '<next>' + 
-                                                '<block type="rgb_led" x="430" y="200">' +
-                                                    '<field name="color_left">#66ffff</field>' + 
-                                                    '<field name="color_right">#000000</field>'+
-                                                    '<field name="duration">1</field>' +
-                                                    '<next>' +
-                                                        '<block type="playmusicnote" x="430" y="130">' +
-                                                            '<field name="Note">F</field><field name="Duration">1</field>' +
-                                                                '<next>' +
-                                                                    '<block type="rgb_led" x="430" y="200">' +
-                                                                        '<field name="color_left">#66ffff</field>' + 
-                                                                        '<field name="color_right">#000000</field>'+
-                                                                        '<field name="duration">1</field>' +
-                                                                    '</block>' +  
-                                                                '</next>' +
-                                                        '</block>' +
-                                                    '</next>' +    
-                                                '</block>' +
-                                            '</next>' +
+                                        '<field name="Note">A</field>' +
+                                        '<value name="Duration">' +
+                                            '<block type="calculator"><field name="Value">1</field></block>' +
+                                        '</value>'+
+                                        '<next>' + 
+                                            '<block type="rgb_led" x="430" y="200">' +
+                                                '<field name="color_left">#66ffff</field>' + 
+                                                '<field name="color_right">#000000</field>'+
+                                                '<value name="Duration">' +
+                                                    '<block type="calculator"><field name="Value">1</field></block>' +
+                                                '</value>'+
+                                                '<next>' +
+                                                    '<block type="playmusicnote" x="430" y="130">' +
+                                                        '<field name="Note">F</field>' +
+                                                        '<value name="Duration">' +
+                                                            '<block type="calculator"><field name="Value">1</field></block>' +
+                                                        '</value>'+
+                                                        '<next>' +
+                                                            '<block type="rgb_led" x="430" y="200">' +
+                                                                '<field name="color_left">#66ffff</field>' + 
+                                                                '<field name="color_right">#000000</field>'+
+                                                                '<value name="Duration">' +
+                                                                    '<block type="calculator"><field name="Value">1</field></block>' +
+                                                                '</value>'+
+                                                            '</block>' +  
+                                                        '</next>' +
+                                                    '</block>' +
+                                                '</next>' +    
+                                            '</block>' +
+                                        '</next>' +
                                     '</block>' +
                                 '</statement>' +
                         '</block>' +
@@ -518,7 +672,9 @@ Lesson =
         '<block type="robot_move" x="450" y="150">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">10</field>'+
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
         '</block>' + 
         '<block type="wait_seconds" x="412" y="200">' +
             '<field name="SECONDS">1</field>' + 
@@ -526,57 +682,214 @@ Lesson =
         '<block type="robot_move" x="450" y="250">'+
                     '<field name="Direction">Lùi</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">10</field>'+
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
         '</block>',
         //5.2
         '<block type="dummy_play_block" x="400" y="50"></block>',
         
         //5.3
-        // TODO: add wait until ... block
-        '<block type="dummy_play_block" x="400" y="50"></block>',
-
-        //5.4
-        '<block type="dummy_play_block" x="400" y="50">' +
+        '<block type="dummy_play_block" x="150" y="50">' +
             '<next>' + 
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">10</field>'+
+                    '<value name="Duration">' +
+                        '<block type="calculator">' +
+                            '<field name="Value">10</field>' +
+                        '</block>' +
+                    '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>' +
-        '<block type="srf05" x="430" y="300">' +
+        '<block type="wait_until" x="61" y="222">' +
+            '<value name="condition">' +
+                '<block type="logic_compare">' +
+                    '<field name="OP">LTE</field>' +
+                    '<value name="A">' +
+                        '<block type="srf05">' +
+                            '<field name="port">Port 1</field>' +
+                        '</block>' +
+                    '</value>' +
+                    '<value name="B">' +
+                        '<block type="calculator">' +
+                            '<field name="Value">10</field>' +
+                        '</block>' +
+                    '</value>' +
+                '</block>' +
+            '</value>' +
+        '</block>' + 
+        '<block type="stop_move" x="208" y="293"></block>',
+
+
+        //5.4
+        '<block type="dummy_play_block" x="150" y="50">' +
+            '<next>' + 
+                '<block type="robot_move">'+
+                    '<field name="Direction">Tiến</field>'+
+                    '<field name="Velocity">10</field>' + 
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">100</field></block>' +
+                    '</value>'+
+                '</block>' + 
+            '</next>' +
+        '</block>' +
+        '<block type="srf05" x="160" y="300">' +
             '<field name="port">Port 1</field>' +
         '</block>',
+
         //5.5
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' + 
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">10</field>' + 
-                    '<field name="Duration">10</field>'+
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>',
 
         //5.6
-        // TODO: add wait until ... block
-        '<block type="dummy_play_block" x="400" y="50"></block>',
+        '<block type="dummy_play_block" x="150" y="50">' +
+            '<next>' +
+                '<block type="while"></block>' +
+            '</next>' + 
+        '</block>' +
+        '<block type="robot_move" x="200" y="200">'+
+            '<field name="Direction">Tiến</field>'+
+            '<field name="Velocity">10</field>' + 
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
+            '<next>' + 
+                '<block type="wait_until">' +
+                    '<value name="condition">' +
+                        '<block type="logic_compare">' +
+                            '<field name="OP">LTE</field>' +
+                            '<value name="A">' +
+                                '<block type="srf05">' +
+                                    '<field name="port">Port 1</field>' +
+                                '</block>' +
+                            '</value>' +
+                            '<value name="B">' +
+                                '<block type="calculator">' +
+                                    '<field name="Value">10</field>' +
+                                '</block>' +
+                            '</value>' +
+                        '</block>' +
+                    '</value>' +
+                    '<next>' + 
+                        '<block type="robot_move">'+
+                            '<field name="Direction">Lùi</field>'+
+                            '<field name="Velocity">10</field>' + 
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
+                        '</block>' + 
+                    '</next>' +
+                '</block>'+  
+            '</next>' +
+        '</block>',
 
         //5.7
-        // TODO: add wait until ... block
-        '<block type="dummy_play_block" x="400" y="50"></block>',
+        '<block type="dummy_play_block" x="150" y="50">' +
+        '</block>' +
+        '<block type="robot_move" x="200" y="200">'+
+            '<field name="Direction">Tiến</field>'+
+            '<field name="Velocity">10</field>' + 
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
+            '<next>' + 
+                '<block type="wait_until">' +
+                    '<value name="condition">' +
+                        '<block type="logic_compare">' +
+                            '<field name="OP">LTE</field>' +
+                            '<value name="A">' +
+                                '<block type="srf05">' +
+                                    '<field name="port">Port 1</field>' +
+                                '</block>' +
+                            '</value>' +
+                            '<value name="B">' +
+                                '<block type="calculator">' +
+                                    '<field name="Value">10</field>' +
+                                '</block>' +
+                            '</value>' +
+                        '</block>' +
+                    '</value>' +
+                    '<next>' + 
+                        '<block type="robot_move">'+
+                            '<field name="Direction">Lùi</field>'+
+                            '<field name="Velocity">10</field>' + 
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
+                        '</block>' + 
+                    '</next>' +
+                '</block>'+  
+            '</next>' +
+        '</block>',
     ],
     
     // LESSON 6
     [
         //6.1
         // TODO: add wait until ... block
-        '<block type="dummy_play_block" x="400" y="50"></block>',
+        '<block type="dummy_play_block" x="150" y="50"></block>' + 
+        '<block type="logic_compare" x="200" y="150">' +
+            '<field name="OP">LTE</field>' +
+            '<value name="A">' +
+                '<block type="srf05">' +
+                    '<field name="port">Port 1</field>' +
+                '</block>' +
+            '</value>' +
+            '<value name="B">' +
+                '<block type="calculator">' +
+                    '<field name="Value">10</field>' +
+                '</block>' +
+            '</value>' +
+        '</block>' +
+        '<block type="playmusicnote" x="150" y="250">' +
+            '<field name="Note">F</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
+        '</block>',
         
         //6.2
         // TODO: add wait until ... block
-        '<block type="dummy_play_block" x="400" y="50"></block>',
+        '<block type="dummy_play_block" x="150" y="50">' +
+            '<next>' + 
+                '<block type="wait_until">' +
+                    '<value name="condition">' +
+                        '<block type="logic_compare">' +
+                            '<field name="OP">LTE</field>' +
+                            '<value name="A">' +
+                                '<block type="srf05">' +
+                                    '<field name="port">Port 1</field>' +
+                                '</block>' +
+                            '</value>' +
+                            '<value name="B">' +
+                                '<block type="calculator">' +
+                                    '<field name="Value">10</field>' +
+                                '</block>' +
+                            '</value>' +
+                        '</block>' +
+                    '</value>' +
+                    '<next>' + 
+                        '<block type="playmusicnote" x="150" y="250">' +
+                            '<field name="Note">F</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
+                        '</block>'+ 
+                    '</next>' +
+                '</block>'+  
+            '</next>' +
+        '</block>',
 
         //6.3
         '<block type="dummy_play_block" x="400" y="50">' +
@@ -594,14 +907,18 @@ Lesson =
                                 '<block type="rgb_led">' +
                                     '<field name="color_left">#00cccc</field>' +
                                     '<field name="color_right">#00cccc</field>' +
-                                    '<field name="duration">10</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">10</field></block>' +
+                                    '</value>'+
                                 '</block>' +
                             '</statement>' +
                             '<statement name="else block">' +   
                                 '<block type="rgb_led">' +
                                     '<field name="color_left">#ff0000</field>' +
                                     '<field name="color_right">#ff0000</field>' +
-                                    '<field name="duration">10</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">10</field></block>' +
+                                    '</value>'+
                                 '</block>' +
                             '</statement>' +
                         '</block>' +
@@ -625,12 +942,16 @@ Lesson =
         '<block type="rgb_led" x="430" y="250">' +
             '<field name="color_left">#00cccc</field>' +
             '<field name="color_right">#00cccc</field>' +
-            '<field name="duration">10</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
         '</block>' +
         '<block type="rgb_led" x="430" y="320">' +
             '<field name="color_left">#ff0000</field>' +
             '<field name="color_right">#ff0000</field>' +
-            '<field name="duration">10</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
         '</block>',
 
         //6.5
@@ -668,7 +989,9 @@ Lesson =
                                 '<block type="robot_move">' +
                                     '<field name="Direction">Tiến</field>' +
                                     '<field name="Velocity">50</field>' +
-                                    '<field name="Duration">100</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">100</field></block>' +
+                                    '</value>'+
                                 '</block>' +
                             '</statement>' +
                             '<statement name="else block">' +   
@@ -684,12 +1007,16 @@ Lesson =
         '<block type="rgb_led" x="430" y="270">' +
             '<field name="color_left">#00cccc</field>' +
             '<field name="color_right">#00cccc</field>' +
-            '<field name="duration">10</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
         '</block>' +
         '<block type="rgb_led" x="430" y="340">' +
             '<field name="color_left">#ff0000</field>' +
             '<field name="color_right">#ff0000</field>' +
-            '<field name="duration">10</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
         '</block>',
     ],
 
@@ -707,7 +1034,10 @@ Lesson =
             '</next>' +
         '</block>' +
         '<block type="playmusicnote" x="380" y="300">' +
-            '<field name="Note">C</field><field name="Duration">1</field>' +
+            '<field name="Note">C</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
         '</block>',
 
         //7.2
@@ -746,12 +1076,16 @@ Lesson =
         '<block type="robot_move" x="400" y="200">' +
             '<field name="Direction">Rẽ trái</field>' +
             '<field name="Velocity">50</field>' +
-            '<field name="Duration">1</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">1</field></block>' +
+            '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Rẽ phải</field>' +
                     '<field name="Velocity">50</field>' +
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>'+
             '</next>' +
         '</block>',
@@ -771,12 +1105,16 @@ Lesson =
                                 '<block type="robot_move" x="400" y="200">' +
                                     '<field name="Direction">Rẽ trái</field>' +
                                     '<field name="Velocity">50</field>' +
-                                    '<field name="Duration">1</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                     '<next>' +
                                         '<block type="robot_move">' +
                                             '<field name="Direction">Rẽ phải</field>' +
                                             '<field name="Velocity">50</field>' +
-                                            '<field name="Duration">1</field>' +
+                                            '<value name="Duration">' +
+                                                '<block type="calculator"><field name="Value">1</field></block>' +
+                                            '</value>'+
                                         '</block>'+
                                     '</next>' +
                                 '</block>' +
@@ -807,7 +1145,9 @@ Lesson =
                                 '<block type="rgb_led">' +
                                     '<field name="color_left">#00cccc</field>' +
                                     '<field name="color_right">#00cccc</field>' +
-                                    '<field name="duration">10</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">10</field></block>' +
+                                    '</value>'+
                                 '</block>' +
                             '</statement>' +
                             '<next>' +
@@ -843,7 +1183,10 @@ Lesson =
                     '</statement>' +
                     '<next>' +
                         '<block type="playmusicnote" x="380" y="300">' +
-                            '<field name="Note">C</field><field name="Duration">1</field>' +
+                            '<field name="Note">C</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +
                 '</block>' +
@@ -871,7 +1214,10 @@ Lesson =
                     '</statement>' +
                     '<next>' +
                         '<block type="playmusicnote" x="380" y="300">' +
-                            '<field name="Note">C</field><field name="Duration">1</field>' +
+                            '<field name="Note">C</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +
                 '</block>' +
@@ -888,7 +1234,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Rẽ phải</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>'+
                     '</next>' +
                 '</block>' +
@@ -931,7 +1279,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Rẽ phải</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>'+
                     '</next>' +
                 '</block>' +
@@ -940,7 +1290,6 @@ Lesson =
         '<block type="srf05" x="300" y="250"><field name="port">Port 1</field></block>',
 
         //8.5
-        //8.4
         '<block type="dummy_play_block" x="250" y="50">' +
             '<next>' +
                 '<block type="while">' +
@@ -963,10 +1312,15 @@ Lesson =
                         '<block type="rgb_led">' +
                             '<field name="color_left">#00cccc</field>' +
                             '<field name="color_right">#00cccc</field>' +
-                            '<field name="duration">10</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                             '<next>' +
                                 '<block type="playmusicnote" x="380" y="300">' +
-                                '   <field name="Note">C</field><field name="Duration">1</field>' +
+                                    '<field name="Note">C</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                 '</block>' +
                             '</next>' +        
                         '</block>'  +
@@ -980,15 +1334,22 @@ Lesson =
         '<block type="rgb_led" x="300" y="150">' +
             '<field name="color_left">#00cccc</field>' +
             '<field name="color_right">#00cccc</field>' +
-            '<field name="duration">10</field>' +
+            '<value name="Duration">' +
+                '<block type="calculator"><field name="Value">10</field></block>' +
+            '</value>'+
             '<next>' +
                 '<block type="playmusicnote" x="380" y="300">' +
-                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                    '<field name="Note">C</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                     '<next>' +
                         '<block type="robot_move">' +
                             '<field name="Direction">Rẽ phải</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>'+
                     '</next>' +
                 '</block>' +
@@ -1019,7 +1380,10 @@ Lesson =
                     '</statement>' +
                     '<next>' +
                         '<block type="playmusicnote" x="380" y="300">' +
-                            '<field name="Note">C</field><field name="Duration">1</field>' +
+                            '<field name="Note">C</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' +
                     '</next>' +
                 '</block>' +
@@ -1049,7 +1413,9 @@ Lesson =
                         '<block type="rgb_led">' +
                             '<field name="color_left">#00cccc</field>' +
                             '<field name="color_right">#00cccc</field>' +
-                            '<field name="duration">10</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">10</field></block>' +
+                            '</value>'+
                         '</block>'  +
                     '</next>' +
                 '</block>' +
@@ -1079,7 +1445,9 @@ Lesson =
                         '<block type="rgb_led">' +
                             '<field name="color_left">#00cccc</field>' +
                             '<field name="color_right">#00cccc</field>' +
-                            '<field name="duration">3</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">3</field></block>' +
+                            '</value>'+
                         '</block>'  +
                     '</next>' +
                 '</block>' +
@@ -1102,14 +1470,18 @@ Lesson =
                                 '<block type="rgb_led">' +
                                     '<field name="color_left">#000000</field>' +
                                     '<field name="color_right">#000000</field>' +
-                                    '<field name="duration">1</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                 '</block>' +
                             '</statement>' +
                             '<statement name="else block">' +   
                                 '<block type="rgb_led">' +
                                     '<field name="color_left">#00cccc</field>' +
                                     '<field name="color_right">#00cccc</field>' +
-                                    '<field name="duration">1</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                 '</block>'  +
                             '</statement>' +
                             '<next>' +
@@ -1146,7 +1518,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Tiến</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>'  +
                     '</next>' +
                 '</block>' +
@@ -1185,16 +1559,39 @@ Lesson =
                 '<block type="robot_move">' +
                     '<field name="Direction">Tiến</field>' +
                     '<field name="Velocity">50</field>' +
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>'  +
             '</next>' +
         '</block>' +
-        '<block type="math_number" x="250" y="200"><field name="NUM">175</field></block>',
+        '<block type="calculator"><field name="Value">175</field></block>',
 
         //10.2 Refactor block robot move for complete
         '<block type="dummy_play_block" x="250" y="50">' +
+            '<next>' +
+                '<block type="robot_move">' +
+                    '<field name="Direction">Tiến</field>' +
+                    '<field name="Velocity">50</field>' +
+                    '<value name="Duration">' +
+                        '<block type="math_arithmetic">' +
+                            '<field name="OP">ADD</field>' +
+                            '<value name="A">' +
+                                '<block type="calculator">' +
+                                    '<field name="Value">1</field>' +
+                                '</block>' +
+                            '</value>' +
+                            '<value name="B">' +
+                                '<block type="calculator">' +
+                                    '<field name="Value">10</field>' +
+                                '</block>' +
+                            '</value>' +
+                        '</block>' +
+                    '</value>' +
+                '</block>'  +
+            '</next>' +
         '</block>' +
-        '<block type="math_number" x="250" y="200"><field name="NUM">175</field></block>',
+        '<block type="calculator" x="300" y="200"><field name="Value">175</field></block>',
 
         //10.3
         '<block type="dummy_play_block" x="250" y="50">' +
@@ -1204,7 +1601,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Tiến</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                             '<next>' +
                                 '<block type="wait_seconds">' +
                                     '<field name="SECONDS">1</field>' +
@@ -1225,7 +1624,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Tiến</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                             '<next>' +
                                 '<block type="wait_seconds">' +
                                     '<field name="SECONDS">1</field>' +
@@ -1252,7 +1653,9 @@ Lesson =
                 '<block type="robot_move">' +
                     '<field name="Direction">Tiến</field>' +
                     '<field name="Velocity">50</field>' +
-                    '<field name="Duration">1</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>'  +
             '</next>' +
         '</block>' +
@@ -1275,7 +1678,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Tiến</field>' +
                             '<field name="Velocity">50</field>' +
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                             '<next>' +
                                 '<block type="wait_seconds">' +
                                     '<field name="SECONDS">1</field>' +
@@ -1336,7 +1741,9 @@ Lesson =
                 '<block type="playwithmatrix">' +
                     '<field name="Port">Port 1</field>' +
                     '<field name="Map" R1="false,false,false,false,false,false,false,false" R2="false,true,false,false,false,false,true,false" R3="true,false,true,false,false,true,false,true" R4="false,false,false,false,false,false,false,false" R5="false,false,false,false,false,false,false,false" R6="false,true,false,false,false,false,true,false" R7="false,false,true,true,true,true,false,false" R8="false,false,false,false,false,false,false,false"></field>' +
-                    '<field name="Duration">0</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' +
             '</next>' +
         '</block>',
@@ -1347,7 +1754,9 @@ Lesson =
                 '<block type="playwithmatrix">' +
                     '<field name="Port">Port 1</field>' +
                     '<field name="Map" R1="false,false,false,false,false,false,false,false" R2="false,false,false,false,false,false,false,false" R3="false,false,false,false,false,false,false,false" R4="false,false,false,false,false,false,false,false" R5="false,false,false,false,false,false,false,false" R6="false,false,false,false,false,false,false,false" R7="false,false,false,false,false,false,false,false" R8="false,false,false,false,false,false,false,false"></field>' +
-                    '<field name="Duration">0</field>' +
+                    '<value name="Duration">' +
+                        '<block type="calculator"><field name="Value">1</field></block>' +
+                    '</value>'+
                 '</block>' +
             '</next>' +
         '</block>',
@@ -1363,7 +1772,10 @@ Lesson =
                             '</value>' +
                             '<statement name="command">' +
                                 '<block type="playmusicnote" x="380" y="300">' +
-                                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                                    '<field name="Note">C</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                 '</block>'  +
                             '</statement>' +
                         '</block>' +
@@ -1392,7 +1804,10 @@ Lesson =
                             '</value>' +
                             '<statement name="command">' +
                                 '<block type="playmusicnote" x="380" y="300">' +
-                                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                                    '<field name="Note">C</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                 '</block>'  +
                             '</statement>' +
                         '</block>' +
@@ -1412,7 +1827,10 @@ Lesson =
                             '</value>' +
                             '<statement name="command">' +
                                 '<block type="playmusicnote" x="380" y="300">' +
-                                    '<field name="Note">C</field><field name="Duration">1</field>' +
+                                    '<field name="Note">C</field>' +
+                                    '<value name="Duration">' +
+                                        '<block type="calculator"><field name="Value">1</field></block>' +
+                                    '</value>'+
                                 '</block>'  +
                             '</statement>' +
                         '</block>' +
