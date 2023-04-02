@@ -1,0 +1,23 @@
+#trafficLights{
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-items:center;
+    justify-content: space-around;
+}
+
+.Light{
+    width: 6em;
+    height: 6em;
+    border: solid;
+    border-width: 1px;
+    border-color: aqua;
+    border-radius: 3em;
+}
+
+/* .Light #0{
+    background-color: green;
+}
+
+.Light # */

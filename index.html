@@ -20,8 +20,8 @@
     <script src="theme.js"></script>
     <script>
         var goog = {
-            provide: function() {},
-            require: function() {}
+            provide: function () { },
+            require: function () { }
         };
     </script>
     <script src="CustomField/js/field_pitch.js"></script>
@@ -30,6 +30,9 @@
     <script src="CustomField/js/field_velocity.js"></script>
     <script src="CustomField/js/field_matrix.js"></script>
     <script src="CustomField/js/field_ring.js"></script>
+    <script src="CustomField/js/field_7_segments.js"></script>
+    <script src="CustomField/js/field_traffic_light.js"></script>
+    <script src="CustomField/js/field_keyboard.js"></script>
     <script src="GenneratorForRange.js"></script>
     <script src="custom_category_es6.js"></script>
     <script src="toolbox_label_es6.js"></script>
@@ -40,6 +43,9 @@
     <link rel="stylesheet" type="text/css" href="CustomField/css/velocity.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/matrixLed.css">
     <link rel="stylesheet" type="text/css" href="CustomField/css/ringled.css">
+    <link rel="stylesheet" type="text/css" href="CustomField/css/field_7ledSegment.css">
+    <link rel="stylesheet" type="text/css" href="CustomField/css/traffic_light.css">
+    <link rel="stylesheet" type="text/css" href="CustomField/css/keyboards.css">
 </head>
 
 <body style="background-image: url(Utils/Background.png); background-size: cover;">
@@ -49,7 +55,9 @@
                 <block type="robot_move">
                     <field name="Direction">Tiến</field>
                     <field name="Velocity">0</field>
-                    <field name="Duration">0</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="servo">
                     <field name="Servo_Select">Servo_1</field>
@@ -58,23 +66,41 @@
                 <block type="motorselect">
                     <field name="MotorSelect">Left</field>
                     <field name="velocity">1</field>
-                    <field name="duration">1</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="stop_move"></block>
             </category>
             <category name="Biểu diễn" categorystyle="list_category">
                 <block type="playmusicnote">
                     <field name="Note">C</field>
-                    <field name="Duration">0</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
+                </block>
+                <block type="field_ledSegments">
+                </block>
+                <block type="relay">
+                </block>
+                <block type="single_led">
+                </block>
+                <block type="traffic_light">
                 </block>
                 <block type="ringled">
                     <field name="ringLedModule">Port 1</field>
                 </block>
-                <block type="playwithmatrix"></block>
+                <block type="playwithmatrix">
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
+                </block>
                 <block type="rgb_led">
                     <field name="color_left">#00cccc</field>
                     <field name="color_right">#00cccc</field>
-                    <field name="duration">0</field>
+                    <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
                 </block>
                 <block type="turnoffledrbg">
                 </block>
@@ -97,14 +123,18 @@
                     <field name="side">bên trái</field>
                     <field name="color">màu trắng</field>
                 </block>
+                <block type="keyboard">
+                </block>
             </category>
             <category name="Tính toán" categorystyle="list_category">
                 <block type="logic_operation">
                     <field name="OP">AND</field>
                 </block>
-                <block type="math_number">
-                    <field name="NUM">0</field>
+                <block type="calculator">
                 </block>
+                <!-- <block type="math_number">
+                    <field name="NUM">1</field>
+                </block> -->
                 <block type="math_arithmetic">
                     <field name="OP">ADD</field>
                     <value name="A">
@@ -134,6 +164,7 @@
                 <block type="if1"></block>
                 <block type="wait_seconds"></block>
                 <block type="while"></block>
+                <block type="wait_until"></block>
             </category>
             <category name="Hàm" categorystyle="list_category">
                 <block type="create_function">
@@ -191,8 +222,7 @@
             });
 
             const urlParams = new URLSearchParams(window.location.search);
-            for(var i = 0; i < workspacePlayground.getToolbox().getToolboxItems().length; i++)
-            {
+            for (var i = 0; i < workspacePlayground.getToolbox().getToolboxItems().length; i++) {
                 var tmpCate = workspacePlayground.getToolbox().getToolboxItems()[i];
                 tmpCate.setDisabled(urlParams.get(i));
             }
@@ -230,7 +260,7 @@
 
             function initApi(interpreter, globalObject) {
                 // Add an API function for the prompt() block.
-                var wrapper = function(text) {
+                var wrapper = function (text) {
                     text = text ? text.toString() : '';
                     return interpreter.createPrimitive(prompt(text));
                 };
@@ -241,19 +271,19 @@
                 initInterpreterWaitForSeconds(interpreter, globalObject);
 
                 // Add an API function for highlighting blocks.
-                var wrapper = function(id) {
+                var wrapper = function (id) {
                     return workspacePlayground.highlightBlock(id);
                 };
                 interpreter.setProperty(globalObject, 'highlightBlock',
                     interpreter.createNativeFunction(wrapper));
 
-                var wrapper = function(payload) {
+                var wrapper = function (payload) {
                     return sendApp(payload);
                 }
                 interpreter.setProperty(globalObject, 'sendApp',
                     interpreter.createNativeFunction(wrapper));
 
-                var wrapper = function() {
+                var wrapper = function () {
                     return interpreter.createPrimitive(getValue());
                 }
                 interpreter.setProperty(globalObject, 'getValue',
@@ -279,7 +309,7 @@
                 return;
             }
 
-            document.addEventListener("message", function(event) {
+            document.addEventListener("message", function (event) {
                 console.log("Received post message", event);
 
             }, false);
@@ -351,8 +381,8 @@
                         // Clear the program output.
                         myInterpreter = new Interpreter(latestCode, initApi);
                     }
-                    setTimeout(function() {
-                        nextStep = function() {
+                    setTimeout(function () {
+                        nextStep = function () {
                             if (myInterpreter.step()) {
                                 if (Boolean(stopButton)) {
                                     setTimeout(nextStep, 10);
@@ -396,17 +426,17 @@
 
             function handleTmpSave() {
                 let workspace = Blockly.getMainWorkspace();
-                if (typeof(Storage) !== "undefined") {
+                if (typeof (Storage) !== "undefined") {
                     localStorage.removeItem("storageTmp");
                     var xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
                     localStorage.setItem("storageTmp", Blockly.Xml.domToText(xml));
-                } else {}
+                } else { }
             }
 
             function handleTmpLOAD() {
                 let workspace = Blockly.getMainWorkspace();
                 workspace.clear();
-                if (typeof(Storage) !== "undefined") {
+                if (typeof (Storage) !== "undefined") {
                     // workspace.clear();
                     if (localStorage.storageTmp != null) {
                         // workspace.clear();
@@ -482,7 +512,7 @@
             }
 
             generateCodeAndLoadIntoInterpreter();
-            workspacePlayground.addChangeListener(function(event) {
+            workspacePlayground.addChangeListener(function (event) {
                 if (!event.isUiEvent) {
                     // Something changed. Parser needs to be reloaded.
                     resetInterpreter();

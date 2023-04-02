@@ -1,6 +1,8 @@
+goog.require('Blockly.JavaScript');
+
 Blockly.JavaScript['playmusicnote'] = function (block) {
   var dropdown_note = block.getFieldValue('Note');
-  var duration = block.getFieldValue('Duration');
+  var duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
   const payload = JSON.stringify({
     type: 'PLAY_MUSIC_NOTE',
     message: {
@@ -15,7 +17,7 @@ Blockly.JavaScript['playmusicnote'] = function (block) {
 Blockly.JavaScript['rgb_led'] = function (block) {
   var colour_color_left = block.getFieldValue('color_left');
   var colour_color_right = block.getFieldValue('color_right');
-  var number_duration = block.getFieldValue('duration');
+  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
 
   const payload = JSON.stringify({
     type: 'SET_LED_RGB',
@@ -32,7 +34,7 @@ Blockly.JavaScript['rgb_led'] = function (block) {
 Blockly.JavaScript['robot_move'] = function (block) {
   var dropdown_direction = block.getFieldValue('Direction');
   var number_velocity = block.getFieldValue('Velocity');
-  var number_duration = block.getFieldValue('Duration');
+  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';;
   if (dropdown_direction == 'Tiến') var dir = 'FORWARD';
   else if (dropdown_direction == 'Lùi') var dir = 'BACKWARD';
   else if (dropdown_direction == 'Rẽ trái') var dir = 'TURNLEFT';
@@ -54,7 +56,7 @@ Blockly.JavaScript['robot_move'] = function (block) {
 Blockly.JavaScript['playwithmatrix'] = function (block) {
   var dropdown_port = block.getFieldValue('Port');
   var map = block.getFieldValue('Map');
-  var number_duration = block.getFieldValue('Duration');
+  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
 
   if (dropdown_port == 'Port 1') var port = 1;
   else if (dropdown_port == 'Port 2') var port = 2;
@@ -256,7 +258,7 @@ Blockly.JavaScript['servo'] = function (block) {
 Blockly.JavaScript['motorselect'] = function (block) {
   var dropdown_motorselect = block.getFieldValue('MotorSelect');
   var number_velocity = block.getFieldValue('velocity');
-  var number_duration = block.getFieldValue('duration');
+  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';;
   if (dropdown_motorselect == 'Left') var motor = 1;
   else if (dropdown_motorselect == 'Right') var motor = 2;
   else if (dropdown_motorselect == 'Both') var motor = 3;
@@ -511,5 +513,94 @@ Blockly.JavaScript['field_ring'] = function (block) {
   // var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'var m = ' + block.getFieldValue('NAME').L1;
   console.log('CODE GEN Vel: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['field_ledSegments'] = function (block) {
+  var map = block.getFieldValue('Map');
+
+  const payload = JSON.stringify({
+    type: 'LED_7',
+    message: {
+      map,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('LED_7 MAP: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['relay'] = function (block) {
+  var state = block.getFieldValue('replayState');
+
+  const payload = JSON.stringify({
+    type: 'RELAY',
+    message: {
+      state,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('RELAY: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['single_led'] = function (block) {
+  var state = block.getFieldValue('singleLedState');
+
+  const payload = JSON.stringify({
+    type: 'LED_ONLY',
+    message: {
+      state,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('SINGLE LED: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['traffic_light'] = function (block) {
+  var greenLight = block.getFieldValue('Lights').greenLight;
+  var yellowLight = block.getFieldValue('Lights').yellowLight;
+  var redLight = block.getFieldValue('Lights').redLight;
+
+  const payload = JSON.stringify({
+    type: 'TRAFFIC_LIGHT',
+    message: {
+      greenLight,
+      yellowLight,
+      redLight
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('TRAFFIC_LIGHT: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['keyboard'] = function (block) {
+  var pressKey = block.getFieldValue('Key').pressKey;
+
+  const payload = JSON.stringify({
+    type: 'KEYBOARD',
+    message: {
+      pressKey,
+    },
+  });
+  var code = "sendApp('" + payload + "');";
+  console.log('KEYBOARD: ' + code);
+  return code;
+};
+
+Blockly.JavaScript['calculator'] = function (block) {
+  var code = (block.getFieldValue('Value'));
+  var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC :
+              Blockly.JavaScript.ORDER_UNARY_NEGATION;
+  console.log('Cal: ' + [code, order]);
+  return [code, order];
+};
+
+Blockly.JavaScript['wait_until'] = function (block) {
+  var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'while(' + value_condition + ')\n' + '{}\n';
   return code;
 };

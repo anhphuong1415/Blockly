@@ -1,0 +1,17 @@
+#keyboard{
+    margin-left: 1em;
+    padding-top: 1em;
+    display: grid;
+    grid-template-columns: 10em 10em;
+    grid-template-rows: 10em 10em;
+    gap: 1em;
+}
+
+.Key{
+    border: solid;
+    border-radius: 2em;
+    border-width: 1px;
+    border-color: #a8d8f8;
+    box-shadow: 0 0 0.4em 0 #79c3f4;
+    text-align: center;
+}
