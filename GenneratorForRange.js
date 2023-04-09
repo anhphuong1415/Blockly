@@ -518,11 +518,12 @@ Blockly.JavaScript['field_ring'] = function (block) {
 
 Blockly.JavaScript['field_ledSegments'] = function (block) {
   var map = block.getFieldValue('Map');
-
+  var time = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
   const payload = JSON.stringify({
     type: 'LED_7',
     message: {
       map,
+      time
     },
   });
   var code = "sendApp('" + payload + "');";

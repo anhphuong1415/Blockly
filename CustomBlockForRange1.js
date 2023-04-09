@@ -130,10 +130,12 @@ Blockly.Blocks['field_ledSegments'] = {
           flipRtl: 'FALSE',
         }),
       )
-      .appendField('Led 7 thanh')
-      .appendField(' hiển thị ')
+      .appendField('Led 7 thanh hiển thị')
       .appendField(new CustomFields.FieldSegmentLed(), 'Map')
-    this.setInputsInline(false);
+      .appendField('trong');
+    this.appendValueInput('Duration');
+    this.appendDummyInput().appendField('giây');
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);
