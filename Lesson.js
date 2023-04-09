@@ -11,7 +11,8 @@ Lesson =
             '<field name="Velocity">10</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
-            '</value>',
+            '</value>' +
+        '</block>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
@@ -19,13 +20,15 @@ Lesson =
             '<field name="Velocity">10</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
-            '</value>'+ + 
+            '</value>'+
+        '</block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
             '<field name="Velocity">10</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
-            '</value>',
+            '</value>' +
+        '</block>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
@@ -34,12 +37,14 @@ Lesson =
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+ 
+        '</block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
             '<field name="Velocity">10</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
-            '</value>',
+            '</value>' +
+        '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' +
@@ -81,7 +86,9 @@ Lesson =
                         '<block type="robot_move">' +
                             '<field name="Direction">Lùi</field>' +
                             '<field name="Velocity">10</field>' + 
-                            '<field name="Duration">1</field>' +
+                            '<value name="Duration">' +
+                                '<block type="calculator"><field name="Value">1</field></block>' +
+                            '</value>'+
                         '</block>' + 
                     '</next>' +
                 '</block>' +
