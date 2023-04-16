@@ -406,12 +406,14 @@ Lesson =
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
+        '</block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ phải</field>'+
             '<field name="Velocity">10</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
-            '</value>',
+            '</value>' +
+        '</block>',
 
         '<block type="dummy_play_block" x="400" y="50">' +
             '<next>' +
@@ -437,11 +439,12 @@ Lesson =
                                             '</value>'+
                                                 '<next>' +
                                                     '<block type="robot_move">'+
-                                                    '<field name="Direction">Rẽ phải</field>'+
-                                                    '<field name="Velocity">10</field>' + 
-                                                    '<value name="Duration">' +
-                                                        '<block type="calculator"><field name="Value">1</field></block>' +
-                                                    '</value>'+
+                                                        '<field name="Direction">Rẽ phải</field>'+
+                                                        '<field name="Velocity">10</field>' + 
+                                                        '<value name="Duration">' +
+                                                            '<block type="calculator"><field name="Value">1</field></block>' +
+                                                        '</value>'+
+                                                    '</block>' +
                                                 '</next>' +
                                         '</block>' +
                                     '</next>' +
