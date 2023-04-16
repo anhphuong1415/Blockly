@@ -10,7 +10,7 @@ Blockly.JavaScript['playmusicnote'] = function (block) {
       duration,
     },
   });
-  var code = "sendApp('" + payload + "');";
+  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + duration + ');\n';
   return code;
 };
 
@@ -27,7 +27,7 @@ Blockly.JavaScript['rgb_led'] = function (block) {
       duration: number_duration,
     },
   });
-  var code = "sendApp('" + payload + "');";
+  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + number_duration + ');\n';
   return code;
 };
 
@@ -49,7 +49,7 @@ Blockly.JavaScript['robot_move'] = function (block) {
       number_velocity,
     },
   });
-  var code = "sendApp('" + payload + "');";
+  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + number_duration + ');\n';
   return code;
 };
 
@@ -271,7 +271,7 @@ Blockly.JavaScript['motorselect'] = function (block) {
       number_duration,
     },
   });
-  var code = "sendApp('" + payload + "');";
+  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + number_duration + ');\n';
   return code;
 };
 
@@ -526,7 +526,7 @@ Blockly.JavaScript['field_ledSegments'] = function (block) {
       time
     },
   });
-  var code = "sendApp('" + payload + "');";
+  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + time + ');\n';
   console.log('LED_7 MAP: ' + code);
   return code;
 };
