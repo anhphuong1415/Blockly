@@ -14,6 +14,7 @@
     <script src="Libs/js/blockly/javascript_compressed.js"></script>
     <script src="toolbox_standard.js"></script>
     <script src="Lesson.js"></script>
+    <script src="LessonToolbox.js"></script>
     <script src="Libs/js/blockly/msg/vi.js"></script>
     <script src="CustomBlockForRange1.js"></script>
     <script src="wait_block.js"></script>
@@ -198,9 +199,22 @@
             //     "fileName": "test",
             //     "content": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"dummy_play_block\" id=\"%2QDD,(EmX`pZ4(*eIN#\" x=\"400\" y=\"50\"><next><block type=\"playmusicnote\" id=\"l`K}9aq=*walq/F%NLAH\"><field name=\"Note\">F</field><field name=\"Duration\">1</field><next><block type=\"if1\" id=\"~tizN+GQW;jqr|UIlj!f\"><value name=\"condition\"><block type=\"logic_compare\" id=\"1x^}6GwBf_o+{v@ny+@)\"><field name=\"OP\">GT</field><value name=\"A\"><block type=\"light_sensor\" id=\"Lx.9|3j0|I@8PcaQ@z:{\"><field name=\"Port\">Port 1</field></block></value><value name=\"B\"><block type=\"math_number\" id=\"B/Tp22|*2(t~6@=gIxy5\"><field name=\"NUM\">100</field></block></value></block></value><statement name=\"command\"><block type=\"playmusicnote\" id=\"VaHLm*r2J]6]/PPb3;XC\"><field name=\"Note\">C</field><field name=\"Duration\">1</field><next><block type=\"ringled\" id=\"HaZx;Jx982JqD^OT.|`x\"><field name=\"ringLedModule\">Port 1</field><field name=\"LED\" L1=\"#00cccc\" L3=\"#6633ff\" L4=\"#030303\" L5=\"#3366ff\" L2=\"#030303\" L6=\"#030303\" L7=\"#030303\" L8=\"#030303\" L9=\"#030303\" L10=\"#cc0000\" L11=\"#030303\" L12=\"#cc0000\"></field></block></next></block></statement></block></next></block></next></block><block type=\"logic_compare\" id=\"Xft4s+F/i=1C)MyAOG|@\" x=\"533\" y=\"183\"><field name=\"OP\">EQ</field></block></xml>"
             // };
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            var lesson = urlParams.get('lesson');
+            var sub_lesson = urlParams.get('subLesson');
+            var _toolbox = document.getElementById('toolbox');
+            if(lesson !== null && sub_lesson !== null)
+            {
+                _toolbox = Blockly.Xml.textToDom('<xml style="display: none">' + LessonToolbox[lesson - 1][sub_lesson - 1] + '</xml>');
+            }
+            else
+            {
+            }
+
             var workspacePlayground = Blockly.inject('blocklyDiv', {
                 media: 'media/',
-                toolbox: document.getElementById('toolbox'),
+                toolbox: _toolbox,
                 collapse: false,
                 comments: true,
                 disable: true,
@@ -224,14 +238,10 @@
                 theme: Blockly.Themes.Halloween
             });
 
-            const urlParams = new URLSearchParams(window.location.search);
             for (var i = 0; i < workspacePlayground.getToolbox().getToolboxItems().length; i++) {
                 var tmpCate = workspacePlayground.getToolbox().getToolboxItems()[i];
                 tmpCate.setDisabled(urlParams.get(i));
             }
-
-            var lesson = urlParams.get('lesson');
-            var sub_lesson = urlParams.get('subLesson');
 
 
             function importScript() {
