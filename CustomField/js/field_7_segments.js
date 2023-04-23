@@ -164,9 +164,9 @@ CustomFields.FieldSegmentLed.prototype.onSegmentClick = function (event) {
     var curSegment = event.currentTarget ;
     var _module = parseInt(curSegment.id[7]);
     var _segment = parseInt(curSegment.id[8]);
-    if(curSegment.style.opacity != '0.3')
+    if(curSegment.style.opacity != '0.1')
     {
-      curSegment.style.opacity = '0.3'
+      curSegment.style.opacity = '0.1'
       let newModule = segmentArray[_module - 1].split(',').map(v => v !== 'false');
       newModule[_segment - 1] = false;
       segmentArray[_module - 1] = newModule.join(',');
@@ -259,10 +259,8 @@ CustomFields.FieldSegmentLed.prototype.renderEditor_ = function () {
             var idBorder = 'segmentBorder' + (i + 1).toString() + (j + 1).toString();
             if (row[j]) {
             document.getElementById(id).style.opacity = '1';
-            document.getElementById(idBorder).style.opacity = '1';
             } else {
             document.getElementById(id).style.opacity = '0.1';
-            document.getElementById(idBorder).style.opacity = '0.1';
             }
         }
     }
