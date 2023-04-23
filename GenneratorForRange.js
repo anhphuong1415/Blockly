@@ -524,39 +524,39 @@ Blockly.JavaScript['field_ledSegments'] = function (block) {
   var seg4 = block.getFieldValue('Map').segment4.split(',').map(v => v !== 'false');
   var time = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
 
-  var outputMap = "";
+  let outputList = {};
   var segment1Value = 0;
   for(let i = 0; i < 7; i++)
   {
     segment1Value += (seg1[i] * Math.pow(2, mapToBlocklySegLed[i]));
   }
-  outputMap += ("0x" + segment1Value.toString(16) + ",");
+  outputList['segment1'] = ("0x" + segment1Value.toString(16));
 
   var segment2Value = 0;
   for(let i = 0; i < 7; i++)
   {
     segment2Value += (seg2[i] * Math.pow(2, mapToBlocklySegLed[i]));
   }
-  outputMap += ("0x" + segment2Value.toString(16) + ",");
+  outputList['segment2'] = ("0x" + segment2Value.toString(16));
 
   var segment3Value = 0;
   for(let i = 0; i < 7; i++)
   {
     segment3Value += (seg3[i] * Math.pow(2, mapToBlocklySegLed[i]));
   }
-  outputMap += ("0x" + segment3Value.toString(16) + ",");
+  outputList['segment3'] = ("0x" + segment3Value.toString(16));
 
   var segment4Value = 0;
   for(let i = 0; i < 7; i++)
   {
     segment4Value += (seg4[i] * Math.pow(2, mapToBlocklySegLed[i]));
   }
-  outputMap += ("0x" + segment4Value.toString(16));
+  outputList['segment4'] = ("0x" + segment4Value.toString(16));
 
   const payload = JSON.stringify({
     type: 'LED_7',
     message: {
-      outputMap,
+      outputList,
       time
     },
   });
