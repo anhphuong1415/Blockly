@@ -390,7 +390,10 @@ Blockly.JavaScript['path_detecter'] = function (block) {
 };
 
 Blockly.JavaScript['dummy_play_block'] = function (block) {
-  var code = '/*___START BLOCKLY PLAYGROUND PROGRAMING__*/\n';
+  const payload = JSON.stringify({
+    type: 'START'
+  });
+  var code = '/*___START BLOCKLY PLAYGROUND PROGRAMING__*/\n' + "sendApp('" + payload + "')\n";
   return code;
 };
 
