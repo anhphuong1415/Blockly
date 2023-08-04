@@ -301,6 +301,12 @@
                 }
                 interpreter.setProperty(globalObject, 'getValue',
                     interpreter.createNativeFunction(wrapper));
+
+                var wrapper = function () {
+                    return interpreter.createPrimitive(sendStop());
+                }
+                interpreter.setProperty(globalObject, 'sendStop',
+                    interpreter.createNativeFunction(wrapper));
             }
 
 
@@ -328,14 +334,19 @@
             }, false);
 
             function sendApp(payload) {
-                console.log("SEND TO APP");
                 window.ReactNativeWebView.postMessage(payload);
                 return window.currentValue;
             }
 
+            function sendStop()
+            {
+                const payload = JSON.stringify({
+                    type: 'STOP'
+                });
+                sendApp(payload);
+            }
+
             function sendCmd(action, port, m_module, duration, dirMove, additionModule, value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12) {
-
-
                 if (m_module == 1) {
                     showSensor("Khoảng cách: " + getValue());
                 } else if (m_module == 2) {
@@ -381,6 +392,7 @@
                 }
                 resetInterpreter();
                 resetStepUi();
+                sendStop();
                 Android.finishCmd();
             }
 
@@ -521,6 +533,7 @@
                 Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
                 Blockly.JavaScript.addReservedWords('highlightBlock');
                 latestCode = Blockly.JavaScript.workspaceToCode(workspacePlayground);
+                latestCode += 'sendStop()';
                 resetStepUi();
             }
 
