@@ -55,7 +55,7 @@
             <category name="Di chuyển" categorystyle="list_category">
                 <block type="robot_move">
                     <field name="Direction">Tiến</field>
-                    <field name="Velocity">0</field>
+                    <field name="Velocity">90</field>
                     <value name="Duration">
                         <block type="calculator"></block>
                     </value>
@@ -66,7 +66,7 @@
                 </block>
                 <block type="motorselect">
                     <field name="MotorSelect">Left</field>
-                    <field name="velocity">1</field>
+                    <field name="velocity">90</field>
                     <value name="Duration">
                         <block type="calculator"></block>
                     </value>
@@ -264,13 +264,13 @@
                 }
             }
             window.workspacePlayground = workspacePlayground;
+            window.workspacePlayground.zoomToFit();
             var myInterpreter = null;
             var nextStep;
             var runButton = document.getElementById('RUN');
             var x = document.getElementById("snackbar");
 
             Blockly.JavaScript.addReservedWords('exit');
-
             function initApi(interpreter, globalObject) {
                 // Add an API function for the prompt() block.
                 var wrapper = function (text) {

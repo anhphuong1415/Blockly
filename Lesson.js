@@ -8,7 +8,7 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>' +
@@ -17,14 +17,14 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
         '</block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>' +
@@ -33,14 +33,14 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+ 
         '</block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>' +
@@ -50,14 +50,14 @@ Lesson =
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Rẽ trái</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
                     '<next>' + 
                         '<block type="robot_move">' +
                             '<field name="Direction">Rẽ phải</field>' +
-                            '<field name="Velocity">10</field>' + 
+                            '<field name="Velocity">90</field>' + 
                             '<value name="Duration">' +
                                 '<block type="calculator"><field name="Value">1</field></block>' +
                             '</value>'+
@@ -68,7 +68,7 @@ Lesson =
         '</block>' + 
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Lùi</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
@@ -78,14 +78,14 @@ Lesson =
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Rẽ trái</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
                     '<next>' + 
                         '<block type="robot_move">' +
                             '<field name="Direction">Lùi</field>' +
-                            '<field name="Velocity">10</field>' + 
+                            '<field name="Velocity">90</field>' + 
                             '<value name="Duration">' +
                                 '<block type="calculator"><field name="Value">1</field></block>' +
                             '</value>'+
@@ -96,14 +96,14 @@ Lesson =
         '</block>' + 
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ phải</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Tiến</field>' +
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -115,7 +115,7 @@ Lesson =
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -124,14 +124,14 @@ Lesson =
         '</block>' + 
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Tiến</field>' +
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -143,14 +143,14 @@ Lesson =
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
                     '<next>' + 
                         '<block type="robot_move">' +
                             '<field name="Direction">Tiến</field>' +
-                            '<field name="Velocity">10</field>' + 
+                            '<field name="Velocity">90</field>' + 
                             '<value name="Duration">' +
                                 '<block type="calculator"><field name="Value">1</field></block>' +
                             '</value>'+
@@ -161,21 +161,21 @@ Lesson =
         '</block>' + 
         '<block type="robot_move" x="430" y="200">' +
             '<field name="Direction">Rẽ trái</field>' +
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
         '</block>' + 
         '<block type="robot_move" x="400" y="250">'+
             '<field name="Direction">Lùi</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Lùi</field>' +
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -198,7 +198,7 @@ Lesson =
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -210,7 +210,7 @@ Lesson =
             '<next>' +
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -362,14 +362,14 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ trái</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
             '<next>' +
                 '<block type="robot_move">' +
                     '<field name="Direction">Rẽ phải</field>' +
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -402,14 +402,14 @@ Lesson =
         '</block>' +
         '<block type="robot_move" x="450" y="200">'+
             '<field name="Direction">Rẽ trái</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
         '</block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ phải</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>' +
@@ -426,7 +426,7 @@ Lesson =
                         '<next>' +
                             '<block type="robot_move">' +
                                 '<field name="Direction">Rẽ trái</field>' +
-                                '<field name="Velocity">10</field>' + 
+                                '<field name="Velocity">90</field>' + 
                                 '<value name="Duration">' +
                                     '<block type="calculator"><field name="Value">1</field></block>' +
                                 '</value>'+
@@ -440,7 +440,7 @@ Lesson =
                                                 '<next>' +
                                                     '<block type="robot_move">'+
                                                         '<field name="Direction">Rẽ phải</field>'+
-                                                        '<field name="Velocity">10</field>' + 
+                                                        '<field name="Velocity">90</field>' + 
                                                         '<value name="Duration">' +
                                                             '<block type="calculator"><field name="Value">1</field></block>' +
                                                         '</value>'+
@@ -461,7 +461,7 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ trái</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
@@ -470,7 +470,7 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="400" y="300">'+
             '<field name="Direction">Rẽ trái</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">10</field></block>' +
             '</value>'+
@@ -618,7 +618,7 @@ Lesson =
         '</block>' +
         '<block type="robot_move" x="450" y="330">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">10</field></block>' +
             '</value>'+
@@ -628,7 +628,7 @@ Lesson =
             '<next>' + 
                 '<block type="robot_move" x="450" y="330">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">10</field></block>' +
                     '</value>'+
@@ -681,7 +681,7 @@ Lesson =
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="150">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -691,7 +691,7 @@ Lesson =
         '</block>' +
         '<block type="robot_move" x="450" y="250">'+
                     '<field name="Direction">Lùi</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -704,7 +704,7 @@ Lesson =
             '<next>' + 
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator">' +
                             '<field name="Value">10</field>' +
@@ -738,7 +738,7 @@ Lesson =
             '<next>' + 
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">100</field></block>' +
                     '</value>'+
@@ -754,7 +754,7 @@ Lesson =
             '<next>' + 
                 '<block type="robot_move">'+
                     '<field name="Direction">Tiến</field>'+
-                    '<field name="Velocity">10</field>' + 
+                    '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
                         '<block type="calculator"><field name="Value">1</field></block>' +
                     '</value>'+
@@ -770,7 +770,7 @@ Lesson =
         '</block>' +
         '<block type="robot_move" x="200" y="200">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
@@ -794,7 +794,7 @@ Lesson =
                     '<next>' + 
                         '<block type="robot_move">'+
                             '<field name="Direction">Lùi</field>'+
-                            '<field name="Velocity">10</field>' + 
+                            '<field name="Velocity">90</field>' + 
                             '<value name="Duration">' +
                                 '<block type="calculator"><field name="Value">1</field></block>' +
                             '</value>'+
@@ -809,7 +809,7 @@ Lesson =
         '</block>' +
         '<block type="robot_move" x="200" y="200">'+
             '<field name="Direction">Tiến</field>'+
-            '<field name="Velocity">10</field>' + 
+            '<field name="Velocity">90</field>' + 
             '<value name="Duration">' +
                 '<block type="calculator"><field name="Value">1</field></block>' +
             '</value>'+
@@ -833,7 +833,7 @@ Lesson =
                     '<next>' + 
                         '<block type="robot_move">'+
                             '<field name="Direction">Lùi</field>'+
-                            '<field name="Velocity">10</field>' + 
+                            '<field name="Velocity">90</field>' + 
                             '<value name="Duration">' +
                                 '<block type="calculator"><field name="Value">1</field></block>' +
                             '</value>'+
