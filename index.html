@@ -237,7 +237,19 @@
                 },
                 theme: Blockly.Themes.Halloween
             });
-
+            Blockly.ContextMenuRegistry.registry.unregister('undoWorkspace');
+            Blockly.ContextMenuRegistry.registry.unregister('redoWorkspace');
+            Blockly.ContextMenuRegistry.registry.unregister('cleanWorkspace');
+            Blockly.ContextMenuRegistry.registry.unregister('collapseWorkspace');
+            Blockly.ContextMenuRegistry.registry.unregister('expandWorkspace');
+            Blockly.ContextMenuRegistry.registry.unregister('blockDuplicate');
+            Blockly.ContextMenuRegistry.registry.unregister('blockComment');
+            Blockly.ContextMenuRegistry.registry.unregister('blockInline');
+            Blockly.ContextMenuRegistry.registry.unregister('blockCollapseExpand');
+            Blockly.ContextMenuRegistry.registry.unregister('blockDisable');
+            Blockly.ContextMenuRegistry.registry.unregister('blockDelete');
+            Blockly.ContextMenuRegistry.registry.unregister('blockHelp');
+            Blockly.ContextMenuRegistry.registry.unregister('blockHelp');
             for (var i = 0; i < workspacePlayground.getToolbox().getToolboxItems().length; i++) {
                 var tmpCate = workspacePlayground.getToolbox().getToolboxItems()[i];
                 tmpCate.setDisabled(urlParams.get(i));
