@@ -3,7 +3,7 @@ var Lesson = Lesson || Object.create(null);
 Lesson = 
 [
     [
-        '<block type="dummy_play_block" x="400" y="50"></block>',
+        '<block type="dummy_start_block" x="400" y="50"></block>',
 
         '<block type="dummy_play_block" x="400" y="50"></block>' +
         '<block type="robot_move" x="450" y="200">'+

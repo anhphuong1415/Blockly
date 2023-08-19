@@ -76,7 +76,7 @@ Blockly.JavaScript['playwithmatrix'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');";
-  console.log('MAP: ' + code);
+  //console.log('MAP: ' + code);
   return code;
 };
 
@@ -389,11 +389,19 @@ Blockly.JavaScript['path_detecter'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['dummy_play_block'] = function (block) {
+Blockly.JavaScript['dummy_start_block'] = function (block) {
   const payload = JSON.stringify({
     type: 'START'
   });
   var code = '/*___START BLOCKLY PLAYGROUND PROGRAMING__*/\n' + "sendApp('" + payload + "')\n";
+  return code;
+};
+
+Blockly.JavaScript['dummy_play_block'] = function (block) {
+  const payload = JSON.stringify({
+    type: 'START'
+  });
+  var code = '/*___START BLOCKLY PLAYGROUND PROGRAMING__*/\n';
   return code;
 };
 
@@ -494,28 +502,28 @@ Blockly.JavaScript['while'] = function (block) {
 Blockly.JavaScript['test_cal_field'] = function (block) {
   // var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'let k = ' + block.getFieldValue('NAME');
-  console.log('CODE GEN: ' + code);
+  // //console.log('CODE GEN: ' + code);
   return code;
 };
 
 Blockly.JavaScript['test_vel_field'] = function (block) {
   // var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'var m = ' + block.getFieldValue('NAME');
-  console.log('CODE GEN Vel: ' + code);
+  // //console.log('CODE GEN Vel: ' + code);
   return code;
 };
 
 Blockly.JavaScript['field_matrix'] = function (block) {
   // var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'var m = ' + block.getFieldValue('NAME')[1];
-  console.log('CODE GEN Vel: ' + code);
+  // //console.log('CODE GEN Vel: ' + code);
   return code;
 };
 
 Blockly.JavaScript['field_ring'] = function (block) {
   // var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'var m = ' + block.getFieldValue('NAME').L1;
-  console.log('CODE GEN Vel: ' + code);
+  //console.log('CODE GEN Vel: ' + code);
   return code;
 };
 
@@ -564,7 +572,7 @@ Blockly.JavaScript['field_ledSegments'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + time + ');\n';
-  console.log('LED_7 MAP: ' + code);
+  //console.log('LED_7 MAP: ' + code);
   return code;
 };
 
@@ -578,7 +586,7 @@ Blockly.JavaScript['relay'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');";
-  console.log('RELAY: ' + code);
+  //console.log('RELAY: ' + code);
   return code;
 };
 
@@ -592,7 +600,7 @@ Blockly.JavaScript['single_led'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');";
-  console.log('SINGLE LED: ' + code);
+  //console.log('SINGLE LED: ' + code);
   return code;
 };
 
@@ -610,7 +618,7 @@ Blockly.JavaScript['traffic_light'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');";
-  console.log('TRAFFIC_LIGHT: ' + code);
+  //console.log('TRAFFIC_LIGHT: ' + code);
   return code;
 };
 
@@ -624,7 +632,7 @@ Blockly.JavaScript['keyboard'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');";
-  console.log('KEYBOARD: ' + code);
+  //console.log('KEYBOARD: ' + code);
   return code;
 };
 
@@ -632,7 +640,7 @@ Blockly.JavaScript['calculator'] = function (block) {
   var code = (block.getFieldValue('Value'));
   var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC :
               Blockly.JavaScript.ORDER_UNARY_NEGATION;
-  console.log('Cal: ' + [code, order]);
+  //console.log('Cal: ' + [code, order]);
   return [code, order];
 };
 

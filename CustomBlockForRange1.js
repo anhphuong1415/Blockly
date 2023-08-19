@@ -613,6 +613,28 @@ Blockly.Blocks['path_detecter'] = {
   },
 };
 
+Blockly.Blocks['dummy_start_block'] = {
+  init: function () {
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_CENTRE)
+      .appendField('Nhấn nút')
+      .appendField(
+        new Blockly.FieldImage('Utils/Icon/png/Start.png', 50, 50, {
+          alt: '*',
+          flipRtl: 'FALSE',
+        }),
+      )
+      .appendField('để bắt đầu chương trình');
+    this.setInputsInline(true);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setDeletable(false);
+    this.setMovable(false);
+  },
+};
+
 Blockly.Blocks['dummy_play_block'] = {
   init: function () {
     this.appendDummyInput()
@@ -630,6 +652,8 @@ Blockly.Blocks['dummy_play_block'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.setDeletable(false);
+    this.setMovable(false);
   },
 };
 
