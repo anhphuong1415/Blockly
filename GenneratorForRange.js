@@ -50,6 +50,12 @@ Blockly.JavaScript['robot_move'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + number_duration + ');\n';
+
+  const payload2 = JSON.stringify({
+    type: 'STOP',
+  });
+  code += "sendApp('" + payload2 + "');\n";
+
   return code;
 };
 

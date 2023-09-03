@@ -275,7 +275,7 @@
                 }
             }
             window.workspacePlayground = workspacePlayground;
-            window.workspacePlayground.zoomToFit();
+            window.workspacePlayground.scrollCenter();
             var myInterpreter = null;
             var nextStep;
             var runButton = document.getElementById('RUN');
@@ -314,7 +314,7 @@
                     interpreter.createNativeFunction(wrapper));
 
                 var wrapper = function () {
-                    return interpreter.createPrimitive(sendStop());
+                    return sendStop();
                 }
                 interpreter.setProperty(globalObject, 'sendStop',
                     interpreter.createNativeFunction(wrapper));
@@ -354,7 +354,8 @@
                 const payload = JSON.stringify({
                     type: 'STOP'
                 });
-                sendApp(payload);
+                window.ReactNativeWebView.postMessage(payload);
+                return window.currentValue;
             }
 
             function sendCmd(action, port, m_module, duration, dirMove, additionModule, value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12) {
