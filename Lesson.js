@@ -740,13 +740,27 @@ Lesson =
                     '<field name="Direction">Tiến</field>'+
                     '<field name="Velocity">90</field>' + 
                     '<value name="Duration">' +
-                        '<block type="calculator"><field name="Value">100</field></block>' +
+                        '<block type="calculator"><field name="Value">10</field></block>' +
                     '</value>'+
                 '</block>' + 
             '</next>' +
         '</block>' +
-        '<block type="srf05" x="160" y="300">' +
-            '<field name="port">Port 1</field>' +
+        '<block type="wait_until" x="150" y="200">' +
+            '<value name="condition">' +
+                '<block type="logic_compare">' +
+                    '<field name="OP">LTE</field>' +
+                    '<value name="A">' +
+                        '<block type="srf05">' +
+                            '<field name="port">Port 1</field>' +
+                        '</block>' +
+                    '</value>' +
+                    '<value name="B">' +
+                        '<block type="calculator">' +
+                            '<field name="Value">10</field>' +
+                        '</block>' +
+                    '</value>' +
+                '</block>' +
+            '</value>' +
         '</block>',
 
         //5.5
