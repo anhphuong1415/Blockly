@@ -346,7 +346,17 @@
             }, false);
 
             function sendApp(payload) {
-                window.ReactNativeWebView.postMessage(payload);
+                if(window.ReactNativeWebView)
+                {
+                    window.ReactNativeWebView.postMessage(payload);
+                }
+                else if (window.webkit) {
+                    window.webkit.messageHandlers.messageHandlers.postMessage(payload);
+                }
+                else
+                {
+                    return undefined;
+                }
                 return window.currentValue;
             }
 
@@ -355,8 +365,7 @@
                 const payload = JSON.stringify({
                     type: 'STOP'
                 });
-                window.ReactNativeWebView.postMessage(payload);
-                return window.currentValue;
+                sendApp(payload);
             }
 
             function sendCmd(action, port, m_module, duration, dirMove, additionModule, value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12) {
