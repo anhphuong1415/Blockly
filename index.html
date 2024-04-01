@@ -351,14 +351,14 @@
                     console.log("React native");
                     window.ReactNativeWebView.postMessage(payload);
                 }
-                else if (window.webkit) {
-                    console.log("Flutter");
-                    window.webkit.messageHandlers.flutterWebview.postMessage(payload);
-                }
+                // else if (window.webkit) {
+                    // console.log("Flutter");
+                // }
                 else
                 {
-                    console.log("None");
-                    return undefined;
+                    window.webkit.messageHandlers.flutterWebview.postMessage(payload);
+                    // console.log("None");
+                    // return undefined;
                 }
                 return window.currentValue;
             }
