@@ -348,13 +348,16 @@
             function sendApp(payload) {
                 if(window.ReactNativeWebView)
                 {
+                    console.log("React native");
                     window.ReactNativeWebView.postMessage(payload);
                 }
                 else if (window.webkit) {
-                    window.webkit.messageHandlers.messageHandlers.postMessage(payload);
+                    console.log("Flutter");
+                    window.webkit.messageHandlers.flutterWebview.postMessage(payload);
                 }
                 else
                 {
+                    console.log("None");
                     return undefined;
                 }
                 return window.currentValue;
