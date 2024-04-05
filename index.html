@@ -346,20 +346,23 @@
             }, false);
 
             function sendApp(payload) {
-                if(window.ReactNativeWebView)
-                {
-                    console.log("React native");
-                    window.ReactNativeWebView.postMessage(payload);
-                }
-                else if (window.webkit) {
-                    console.log("Flutter");
-                    window.webkit.messageHandlers.flutterWebview.postMessage(payload);
-                }
-                else
-                {
-                    console.log("None");
-                    return undefined;
-                }
+                // if(window.ReactNativeWebView)
+                // {
+                //     console.log("React native");
+                //     window.ReactNativeWebView.postMessage(payload);
+                // }
+                // else if (window.webkit) {
+                //     console.log("Flutter");
+                //     window.webkit.messageHandlers.flutterWebview.postMessage(payload);
+                // }
+                // else
+                // {
+                //     console.log("None");
+                //     return undefined;
+                // }
+                console.log(payload);
+                Print.postMessage('Example message');
+
                 return window.currentValue;
             }
 
