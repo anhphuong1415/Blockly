@@ -361,7 +361,8 @@
                 //     return undefined;
                 // }
                 console.log(payload);
-                Print.postMessage('Example message');
+                window.postMessage('Example message')
+                // Print.postMessage('Example message');
 
                 return window.currentValue;
             }
