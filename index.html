@@ -344,7 +344,7 @@
                 console.log("Received post message", event);
 
             }, false);
-            const bc = new BroadcastChannel("test_channel");
+            // const bc = new BroadcastChannel("test_channel");
             function sendApp(payload) {
                 // if(window.ReactNativeWebView)
                 // {
@@ -360,12 +360,12 @@
                 //     console.log("None");
                 //     return undefined;
                 // }
-                console.log(payload);
-                window.postMessage('Example message')
-                bc.postMessage("This is a test message.");
+                // console.log(payload);
+                // window.postMessage('Example message')
+                // bc.postMessage("This is a test message.");
 
                 // Print.postMessage('Example message');
-
+                console.log("Print('Hello tuan7')");
                 return window.currentValue;
             }
 
