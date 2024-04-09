@@ -194,12 +194,14 @@
         </div> -->
 
 
-        <script>
+        <script >
             // window.currentFile = {
             //     "id": "fd127a06-8d1f-44aa-a2a9-a1fd180ae01e",
             //     "fileName": "test",
             //     "content": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"dummy_play_block\" id=\"%2QDD,(EmX`pZ4(*eIN#\" x=\"400\" y=\"50\"><next><block type=\"playmusicnote\" id=\"l`K}9aq=*walq/F%NLAH\"><field name=\"Note\">F</field><field name=\"Duration\">1</field><next><block type=\"if1\" id=\"~tizN+GQW;jqr|UIlj!f\"><value name=\"condition\"><block type=\"logic_compare\" id=\"1x^}6GwBf_o+{v@ny+@)\"><field name=\"OP\">GT</field><value name=\"A\"><block type=\"light_sensor\" id=\"Lx.9|3j0|I@8PcaQ@z:{\"><field name=\"Port\">Port 1</field></block></value><value name=\"B\"><block type=\"math_number\" id=\"B/Tp22|*2(t~6@=gIxy5\"><field name=\"NUM\">100</field></block></value></block></value><statement name=\"command\"><block type=\"playmusicnote\" id=\"VaHLm*r2J]6]/PPb3;XC\"><field name=\"Note\">C</field><field name=\"Duration\">1</field><next><block type=\"ringled\" id=\"HaZx;Jx982JqD^OT.|`x\"><field name=\"ringLedModule\">Port 1</field><field name=\"LED\" L1=\"#00cccc\" L3=\"#6633ff\" L4=\"#030303\" L5=\"#3366ff\" L2=\"#030303\" L6=\"#030303\" L7=\"#030303\" L8=\"#030303\" L9=\"#030303\" L10=\"#cc0000\" L11=\"#030303\" L12=\"#cc0000\"></field></block></next></block></statement></block></next></block></next></block><block type=\"logic_compare\" id=\"Xft4s+F/i=1C)MyAOG|@\" x=\"533\" y=\"183\"><field name=\"OP\">EQ</field></block></xml>"
             // };
+            // Print.postMessage('Hello World being called from Javascript code');
+            window.postMessage('data postmessage',"*");
             const urlParams = new URLSearchParams(window.location.search);
             
             var lesson = urlParams.get('lesson');
@@ -344,28 +346,25 @@
                 console.log("Received post message", event);
 
             }, false);
-            // const bc = new BroadcastChannel("test_channel");
-            function sendApp(payload) {
-                // if(window.ReactNativeWebView)
-                // {
-                //     console.log("React native");
-                //     window.ReactNativeWebView.postMessage(payload);
-                // }
-                // else if (window.webkit) {
-                //     console.log("Flutter");
-                //     window.webkit.messageHandlers.flutterWebview.postMessage(payload);
-                // }
-                // else
-                // {
-                //     console.log("None");
-                //     return undefined;
-                // }
-                // console.log(payload);
-                // window.postMessage('Example message')
-                // bc.postMessage("This is a test message.");
 
-                // Print.postMessage('Example message');
-                console.log("Print('Hello tuan7')");
+            function sendApp(payload) {
+                if(window.ReactNativeWebView)
+                {
+                    console.log("React native");
+                    window.ReactNativeWebView.postMessage(payload);
+                }
+                else if (window.webkit) {
+                    console.log("Flutter");
+                    window.webkit.messageHandlers.flutterWebview.postMessage(payload);
+                }
+                else
+                {
+                    window.location.hash = payload;
+                    window.location.hash = '';
+                    console.log(payload);
+                    return undefined;
+                }
+                
                 return window.currentValue;
             }
 
