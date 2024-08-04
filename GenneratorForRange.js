@@ -59,6 +59,34 @@ Blockly.JavaScript['robot_move'] = function (block) {
   return code;
 };
 
+Blockly.JavaScript['robot_continue_move'] = function (block) {
+  var dropdown_direction = block.getFieldValue('Direction');
+  var number_velocity = block.getFieldValue('Velocity');
+  var number_duration = -1;
+  if (dropdown_direction == 'Tiến') var dir = 'FORWARD';
+  else if (dropdown_direction == 'Lùi') var dir = 'BACKWARD';
+  else if (dropdown_direction == 'Rẽ trái') var dir = 'TURNLEFT';
+  else if (dropdown_direction == 'Rẽ phải') var dir = 'TURNRIGHT';
+  else dir = 0;
+
+  const payload = JSON.stringify({
+    type: 'MOVE',
+    message: {
+      dir,
+      number_duration,
+      number_velocity,
+    },
+  });
+  var code = "sendApp('" + payload + "');\n";
+
+  const payload2 = JSON.stringify({
+    type: 'STOP',
+  });
+  code += "sendApp('" + payload2 + "');\n";
+
+  return code;
+};
+
 Blockly.JavaScript['playwithmatrix'] = function (block) {
   var dropdown_port = block.getFieldValue('Port');
   var map = block.getFieldValue('Map');
@@ -264,7 +292,7 @@ Blockly.JavaScript['servo'] = function (block) {
 Blockly.JavaScript['motorselect'] = function (block) {
   var dropdown_motorselect = block.getFieldValue('MotorSelect');
   var number_velocity = block.getFieldValue('velocity');
-  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';;
+  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
   if (dropdown_motorselect == 'Left') var motor = 1;
   else if (dropdown_motorselect == 'Right') var motor = 2;
   else if (dropdown_motorselect == 'Both') var motor = 3;
@@ -278,6 +306,25 @@ Blockly.JavaScript['motorselect'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + number_duration + ');\n';
+  return code;
+};
+
+Blockly.JavaScript['two_motor'] = function (block) {
+  var leftVel = block.getFieldValue('LeftVel');
+  var leftDuration = Blockly.JavaScript.valueToCode(block, 'LeftDuration', Blockly.JavaScript.ORDER_NONE) || '0';
+  var rightVel = block.getFieldValue('RightVel');
+  var rightDuration = Blockly.JavaScript.valueToCode(block, 'RightDuration', Blockly.JavaScript.ORDER_NONE) || '0';
+
+  const payload = JSON.stringify({
+    type: 'MOTOR',
+    message: {
+      leftVel,
+      leftDuration,
+      rightVel,
+      rightDuration
+    },
+  });
+  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + Math.max(leftDuration, rightDuration) + ');\n';
   return code;
 };
 

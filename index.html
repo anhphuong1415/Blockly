@@ -61,6 +61,10 @@
                         <block type="calculator"></block>
                     </value>
                 </block>
+                <block type="robot_continue_move">
+                    <field name="Direction">Tiến</field>
+                    <field name="Velocity">90</field>
+                </block>
                 <block type="servo">
                     <field name="Servo_Select">Servo_1</field>
                     <field name="Angle">90</field>
@@ -69,6 +73,16 @@
                     <field name="MotorSelect">Left</field>
                     <field name="velocity">90</field>
                     <value name="Duration">
+                        <block type="calculator"></block>
+                    </value>
+                </block>
+                <block type="two_motor">
+                    <field name="LeftVel">90</field>
+                    <value name="LeftDuration">
+                        <block type="calculator"></block>
+                    </value>
+                    <field name="RightVel">90</field>
+                    <value name="RightDuration">
                         <block type="calculator"></block>
                     </value>
                 </block>
@@ -420,10 +434,10 @@
                     clearTimeout(nextStep);
                     nextStep = null;
                 }
+                console.log("Send stop to app");
                 resetInterpreter();
                 resetStepUi();
                 sendStop();
-                Android.finishCmd();
             }
 
             function handleGenCode() {
@@ -451,7 +465,6 @@
                                 resetInterpreter();
                                 resetStepUi();
                                 document.getElementById("RUN").style.background = "url(Utils/Icon/svg/Start.svg)";
-                                // Android.finishCmd();
                             }
                         }
                         nextStep();
@@ -475,7 +488,6 @@
                     return;
                 } else {
                     document.getElementById("RUN").style.background = "url(Utils/Icon/svg/Start.svg)";
-                    // Android.finishCmd();
                 }
             }
 
