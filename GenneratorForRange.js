@@ -61,8 +61,8 @@ Blockly.JavaScript['robot_move'] = function (block) {
 
 Blockly.JavaScript['robot_continue_move'] = function (block) {
   var dropdown_direction = block.getFieldValue('Direction');
+  var duration = -1;
   var number_velocity = block.getFieldValue('Velocity');
-  var number_duration = -1;
   if (dropdown_direction == 'Tiến') var dir = 'FORWARD';
   else if (dropdown_direction == 'Lùi') var dir = 'BACKWARD';
   else if (dropdown_direction == 'Rẽ trái') var dir = 'TURNLEFT';
@@ -73,16 +73,11 @@ Blockly.JavaScript['robot_continue_move'] = function (block) {
     type: 'MOVE',
     message: {
       dir,
-      number_duration,
-      number_velocity,
+      duration,
+      number_velocity
     },
   });
   var code = "sendApp('" + payload + "');\n";
-
-  const payload2 = JSON.stringify({
-    type: 'STOP',
-  });
-  code += "sendApp('" + payload2 + "');\n";
 
   return code;
 };
@@ -316,7 +311,7 @@ Blockly.JavaScript['two_motor'] = function (block) {
   var rightDuration = Blockly.JavaScript.valueToCode(block, 'RightDuration', Blockly.JavaScript.ORDER_NONE) || '0';
 
   const payload = JSON.stringify({
-    type: 'MOTOR',
+    type: 'DUAL_MOTOR',
     message: {
       leftVel,
       leftDuration,
@@ -325,6 +320,10 @@ Blockly.JavaScript['two_motor'] = function (block) {
     },
   });
   var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + Math.max(leftDuration, rightDuration) + ');\n';
+  const payload2 = JSON.stringify({
+    type: 'STOP',
+  });
+  code += "sendApp('" + payload2 + "');\n"
   return code;
 };
 
