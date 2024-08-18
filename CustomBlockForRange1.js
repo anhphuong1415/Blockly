@@ -476,10 +476,7 @@ Blockly.Blocks['motorselect'] = {
         'MotorSelect',
       )
       .appendField('quay với vận tốc')
-      .appendField(new CustomFields.FieldVelocity(1, 1, 255, 1), 'velocity')
-      .appendField('trong');
-    this.appendValueInput('Duration');
-    this.appendDummyInput().appendField('giây');
+      .appendField(new CustomFields.FieldVelocity(1, 1, 255, 1), 'velocity');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(90);

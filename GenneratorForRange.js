@@ -287,7 +287,6 @@ Blockly.JavaScript['servo'] = function (block) {
 Blockly.JavaScript['motorselect'] = function (block) {
   var dropdown_motorselect = block.getFieldValue('MotorSelect');
   var number_velocity = block.getFieldValue('velocity');
-  var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';
   if (dropdown_motorselect == 'Left') var motor = 1;
   else if (dropdown_motorselect == 'Right') var motor = 2;
   else if (dropdown_motorselect == 'Both') var motor = 3;
@@ -296,11 +295,11 @@ Blockly.JavaScript['motorselect'] = function (block) {
     type: 'MOTOR',
     message: {
       motor,
-      number_velocity,
-      number_duration,
+      number_velocity
     },
   });
-  var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + number_duration + ');\n';
+  var code = "sendApp('" + payload + "');\n"
+  ;
   return code;
 };
 
@@ -317,7 +316,7 @@ Blockly.JavaScript['two_motor'] = function (block) {
       leftDuration,
       rightVel,
       rightDuration
-    },
+    }
   });
   var code = "sendApp('" + payload + "');\n" + 'waitForSeconds(' + Math.max(leftDuration, rightDuration) + ');\n';
   const payload2 = JSON.stringify({
