@@ -164,12 +164,15 @@ CustomFields.FieldVelocity.prototype.createTicks = function (
 };
 
 CustomFields.FieldVelocity.prototype.onMouseDown = function () {
-  this.mouseMoveWrapper_ = Blockly.browserEvents.bind(
+  if(!this.mouseMoveWrapper_)
+  {
+    this.mouseMoveWrapper_ = Blockly.browserEvents.bind(
     document.body,
     this.getMouseMove(),
     this,
-    this.onMouseMove,
-  );
+    this.onMouseMove
+    );
+  }
 };
 
 CustomFields.FieldVelocity.prototype.onMouseUp = function () {
