@@ -1,6 +1,6 @@
 Blockly.defineBlocksWithJsonArray([{
     "type": "wait_seconds",
-    "message0": "Đợi %1 giây",
+    "message0": "Wait %1 seconds",
     "args0": [{
         "type": "field_number",
         "name": "SECONDS",
