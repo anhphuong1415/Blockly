@@ -53,16 +53,16 @@
 <body style="background: transparent;">
     <div id="bodyDiv">
         <xml id="toolbox" style="display: none">
-            <category name="Di chuyển" categorystyle="list_category">
+            <category name="Move" categorystyle="list_category">
                 <block type="robot_move">
-                    <field name="Direction">Tiến</field>
+                    <field name="Direction">Forward</field>
                     <field name="Velocity">90</field>
                     <value name="Duration">
                         <block type="calculator"></block>
                     </value>
                 </block>
                 <block type="robot_continue_move">
-                    <field name="Direction">Tiến</field>
+                    <field name="Direction">Forward</field>
                     <field name="Velocity">90</field>
                 </block>
                 <block type="servo">
@@ -85,7 +85,7 @@
                 </block>
                 <block type="stop_move"></block>
             </category>
-            <category name="Biểu diễn" categorystyle="list_category">
+            <category name="Display" categorystyle="list_category">
                 <block type="playmusicnote">
                     <field name="Note">C</field>
                     <value name="Duration">
@@ -121,7 +121,7 @@
                 <block type="turnoffledrbg">
                 </block>
             </category>
-            <category name="Cảm biến" categorystyle="list_category">
+            <category name="Sensors" categorystyle="list_category">
                 <block type="srf05">
                     <field name="port">Port 1</field>
                 </block>
@@ -136,21 +136,18 @@
                 </block>
                 <block type="path_detecter">
                     <field name="Port">Port 1</field>
-                    <field name="side">bên trái</field>
-                    <field name="color">màu trắng</field>
+                    <field name="side">left</field>
+                    <field name="color">white</field>
                 </block>
                 <block type="keyboard">
                 </block>
             </category>
-            <category name="Tính toán" categorystyle="list_category">
-                <block type="logic_operation">
+            <category name="Calculation" categorystyle="list_category">
+                <block type="logic_operation"></block>
                     <field name="OP">AND</field>
                 </block>
                 <block type="calculator">
                 </block>
-                <!-- <block type="math_number">
-                    <field name="NUM">1</field>
-                </block> -->
                 <block type="math_arithmetic">
                     <field name="OP">ADD</field>
                     <value name="A">
@@ -168,30 +165,30 @@
                     <field name="OP">EQ</field>
                 </block>
             </category>
-            <category name="Điều khiển" categorystyle="list_category">
+            <category name="Control" categorystyle="list_category">
                 <block type="if_block"></block>
                 <block type="stop_move"></block>
                 <block type="loop">
                     <field name="NAME">0</field>
                 </block>
                 <block type="break_continue_loop">
-                    <field name="action">nhảy vòng lặp</field>
+                    <field name="action">jump loop</field>
                 </block>
                 <block type="if1"></block>
                 <block type="wait_seconds"></block>
                 <block type="while"></block>
                 <block type="wait_until"></block>
             </category>
-            <category name="Hàm" categorystyle="list_category">
+            <category name="Functions" categorystyle="list_category">
                 <block type="create_function">
-                    <field name="Function_name">di chuyển</field>
+                    <field name="Function_name">move</field>
                 </block>
             </category>
-            <category name="Dữ liệu" custom="VARIABLE" categorystyle="list_category"></category>
+            <category name="Data" custom="VARIABLE" categorystyle="list_category"></category>
         </xml>
 
         <xml id="startBlocks" style="display: none">
-            <block type="dummy_play_block" x="400" y="50" id = 'start'></block>
+            <block type="dummy_play_block" x="400" y="50" id='start'></block>
         </xml>
         <div id="functionButton">
             <button id="RUN" onclick="handleGenCode()"></button>
