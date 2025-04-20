@@ -1,0 +1,24 @@
+{
+  "products": [
+    {"name": "VR 01", 
+    "sub_products": [
+        { "Avatar": "111"},
+        { "Helicopter": "222"}, 
+        { "Ranzer": "226"},
+        { "Ranzer_crane": "261"},
+        { "Ranzer_gripper": "230"}, 
+        { "Ranzer_LiftFolkTruck": "244"},
+      ]
+    },
+    {"name": "VR 02", 
+    "sub_products": [
+        { "Avatar": "111"},
+        { "Helicopter": "222"}, 
+        { "Ranzer": "226"},
+        { "Ranzer_crane": "261"},
+        { "Ranzer_gripper": "230"}, 
+        { "Ranzer_LiftFolkTruck": "244"},
+      ]
+    },
+  ]
+}
