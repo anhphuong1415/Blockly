@@ -67,10 +67,10 @@ Blockly.Blocks['robot_move'] = {
     this.appendDummyInput()
       .appendField(
       new Blockly.FieldDropdown([
-        ['Forward', 'Forward'],
-        ['Backward', 'Backward'],
-        ['Turn Left', 'Turn Left'],
-        ['Turn Right', 'Turn Right'],
+        ['Forward', 'FORWARD'],
+        ['Backward', 'BACKWARD'],
+        ['Turn Left', 'TURNLEFT'],
+        ['Turn Right', 'TURNRIGHT'],
       ]),
       'Direction',
       )
@@ -93,10 +93,10 @@ Blockly.Blocks['robot_continue_move'] = {
     this.appendDummyInput()
       .appendField(
       new Blockly.FieldDropdown([
-        ['Forward', 'Forward'],
-        ['Backward', 'Backward'],
-        ['Turn Left', 'Turn Left'],
-        ['Turn Right', 'Turn Right'],
+        ['Forward', 'FORWARD'],
+        ['Backward', 'BACKWARD'],
+        ['Turn Left', 'TURNLEFT'],
+        ['Turn Right', 'TURNRIGHT'],
       ]),
       'Direction',
       )
