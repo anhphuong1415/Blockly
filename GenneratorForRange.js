@@ -35,10 +35,10 @@ Blockly.JavaScript['robot_move'] = function (block) {
   var dropdown_direction = block.getFieldValue('Direction');
   var number_velocity = block.getFieldValue('Velocity');
   var number_duration = Blockly.JavaScript.valueToCode(block, 'Duration', Blockly.JavaScript.ORDER_NONE) || '0';;
-  if (dropdown_direction == 'Tiến') var dir = 'FORWARD';
-  else if (dropdown_direction == 'Lùi') var dir = 'BACKWARD';
-  else if (dropdown_direction == 'Rẽ trái') var dir = 'TURNLEFT';
-  else if (dropdown_direction == 'Rẽ phải') var dir = 'TURNRIGHT';
+  if (dropdown_direction == 'FORWARD') var dir = 'FORWARD';
+  else if (dropdown_direction == 'BACKWARD') var dir = 'BACKWARD';
+  else if (dropdown_direction == 'TURNLEFT') var dir = 'TURNLEFT';
+  else if (dropdown_direction == 'TURNRIGHT') var dir = 'TURNRIGHT';
   else dir = 0;
 
   const payload = JSON.stringify({
@@ -63,10 +63,10 @@ Blockly.JavaScript['robot_continue_move'] = function (block) {
   var dropdown_direction = block.getFieldValue('Direction');
   var duration = -1;
   var number_velocity = block.getFieldValue('Velocity');
-  if (dropdown_direction == 'Tiến') var dir = 'FORWARD';
-  else if (dropdown_direction == 'Lùi') var dir = 'BACKWARD';
-  else if (dropdown_direction == 'Rẽ trái') var dir = 'TURNLEFT';
-  else if (dropdown_direction == 'Rẽ phải') var dir = 'TURNRIGHT';
+  if (dropdown_direction == 'FORWARD') var dir = 'FORWARD';
+  else if (dropdown_direction == 'BACKWARD') var dir = 'BACKWARD';
+  else if (dropdown_direction == 'TURNLEFT') var dir = 'TURNLEFT';
+  else if (dropdown_direction == 'TURNRIGHT') var dir = 'TURNRIGHT';
   else dir = 0;
 
   const payload = JSON.stringify({
